@@ -1,0 +1,80 @@
+// .card-body--form {
+// }
+// .scroll-wrapper--form {
+// }
+
+.page--enter {
+  .page__card {
+    display: grid;
+
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .card-body {
+    overflow-y: auto;
+  }
+}
+
+.form-group--enter-form {
+  text-align: left;
+
+  &.custom-switch {
+    min-height: 1.8rem;
+
+    margin-top: map-get($spacers, 1);
+    margin-bottom: map-get($spacers, 1);
+  }
+}
+
+.label--enter-form {
+  font-size: $small-font-size;
+
+  &.label--input {
+    color: $text-muted;
+    text-transform: uppercase;
+
+    margin-bottom: 0;
+  }
+}
+
+.input--enter-form.form-control {
+  padding: 0;
+
+  border: none;
+  border-bottom: 2px solid $card-color;
+  border-radius: 0;
+
+  background-color: $card-bg;
+
+  &.is-invalid {
+    background-position: center right;
+  }
+}
+
+.nav-btn--enter {
+  .entering {
+    .button-text {
+      margin-right: map-get($spacers, 2);
+    }
+  }
+}
+
+.custom-switch {
+  .custom-control-label {
+    &::after {
+      background-color: $custom-control-indicator-border-color;
+    }
+  }
+
+  .custom-control-input:checked ~ .custom-control-label {
+    &::after {
+      background-color: $custom-control-indicator-border-color;
+    }
+  }
+
+  .custom-control-input:disabled {
+    &:checked ~ .custom-control-label::before {
+      background-color: $custom-control-indicator-border-color;
+    }
+  }
+}

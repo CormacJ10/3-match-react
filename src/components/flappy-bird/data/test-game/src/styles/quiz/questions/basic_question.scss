@@ -1,0 +1,44 @@
+.page--basic-question {
+  grid-template-rows: min-content 1fr min-content;
+
+  .page__card {
+    grid-template-rows: min-content min-content 1fr min-content;
+  }
+
+  .page__card > .card-body {
+    display: grid;
+
+    height: 100%;
+    align-content: start;
+    justify-content: center;
+  }
+
+  .card__trivia {
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-template-rows: 1fr;
+
+    .page__card {
+      grid-template-rows: min-content min-content min-content 1fr min-content;
+    }
+  }
+}
+
+.basic-question--size-regular {
+  .page__card > .card-body {
+    grid-template-columns: 1fr;
+    grid-auto-rows: min-content;
+
+    overflow-y: auto;
+  }
+}
+
+.basic-question--size-large {
+  .page__card > .card-body {
+    grid-template-rows: 1fr min-content;
+    grid-template-columns: 1fr;
+
+    overflow: hidden;
+  }
+}

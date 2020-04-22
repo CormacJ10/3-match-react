@@ -1,0 +1,64 @@
+.page--categories {
+  grid-template-rows: auto 1fr auto;
+
+  .page__card > .card-body {
+    display: grid;
+    height: 100%;
+  }
+}
+
+.interaction--type-categories {
+  display: grid;
+
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(2, auto);
+
+  align-items: center;
+  justify-content: center;
+
+  max-width: 600px;
+  margin: 0 auto;
+
+  .categories__category {
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  .btn__image {
+    height: 100%;
+    width: 100%;
+  }
+
+  .btn__title {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    text-align: left;
+
+    margin-left: 0.8em;
+    margin-right: 0.8em;
+  }
+
+  .btn--category {
+    padding: 0.3em;
+    border-radius: 5px;
+
+    .btn__title {
+      display: none;
+    }
+
+    &:disabled {
+      .btn__title {
+        display: none;
+      }
+    }
+
+    &:hover,
+    &.category-btn--selected {
+      .btn__title {
+        display: block;
+      }
+    }
+  }
+}

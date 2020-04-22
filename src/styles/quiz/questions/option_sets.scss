@@ -1,0 +1,128 @@
+.interaction--type-option-set {
+  width: 93%;
+
+  &.option-set--size-regular {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+
+    align-content: start;
+    justify-content: stretch;
+    justify-self: stretch;
+
+    overflow: hidden;
+  }
+
+  &.option-set--size-large {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    align-items: start;
+    justify-content: center;
+
+    overflow: hidden;
+  }
+
+  &.option-set--size-large.option-set--entered {
+    grid-template-rows: 1fr;
+  }
+
+  &.option-set--size-large.option-set--entered.option-set--correct {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
+.option-set__option {
+
+  padding-top: map-get($spacers, 2);
+  padding-bottom: map-get($spacers, 2);
+
+  box-shadow: 0 6px 12px rgba(29, 30, 39, 0.05);
+
+  transform: perspective(1000px);
+
+  .option__text {
+    font-size: 15px;
+    margin-top: map-get($spacers, 2);
+    margin-bottom: map-get($spacers, 2);
+  }
+
+  .option__icon {
+    svg {
+      height: 1.8em;
+    }
+  }
+}
+
+.option--size-small,
+.option--size-regular {
+  width: 95%;
+
+  display: flex;
+
+  align-content: center;
+  align-items: center;
+
+  .option__text {
+    flex-grow: 1;
+    text-align: left;
+  }
+  .option__icon {
+    width: min-content;
+  }
+}
+
+.option--size-large {
+  display: grid;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: 4fr 1fr;
+
+  align-items: start;
+  justify-items: center;
+
+  // color: map-get($theme-colors, primary);
+  background-color: transparent;
+
+  overflow: hidden;
+
+  &.option-set__option--selected,
+  &:hover,
+  &:active {
+    border-width: 4px;
+    background-color: transparent;
+    color: map-get($theme-colors, primary);
+  }
+
+  .option__image {
+    height: 100%;
+    width: 100%;
+  }
+
+  .option__text {
+    text-align: center;
+  }
+}
+
+.option--unselected {
+  border-color: transparent;
+  border-width: 4px;
+}
+
+.option--selected {
+  box-shadow: 0 10px 16px rgba(29, 30, 39, 0.1);
+  border-color: transparent;
+  border-width: 4px;
+  transform: scale(1.1);
+  transition: all 200ms ease-in-out;
+
+  &.option--result-correct {
+    transform: perspective(1000px) translateZ(0) scale(1.1);
+    border-color: map-get($theme-colors, success);
+  }
+
+  &.option--result-incorrect {
+    transform: perspective(1000px) translateZ(0) scale(1.1);
+    border-color: map-get($theme-colors, danger);
+  }
+}

@@ -1,0 +1,57 @@
+/* stylelint-disable-next-line */
+.card--results {
+  align-items: center;
+  height: 100%;
+
+  .card-body {
+    @include media-breakpoint-up(md) {
+      width: 60%;
+    }
+  }
+
+  svg {
+    height: 60px;
+  }
+
+  @include media-breakpoint-up(md) {
+    // margin: 0 0 1em;
+  }
+}
+
+.card__results {
+  .results__image {
+    max-width: 100%;
+
+    margin-top: -(map-get($spacers, 4));
+    margin-bottom: map-get($spacers, 2);
+  }
+}
+
+.card--answer {
+  flex-basis: 100%;
+  svg {
+    height: 4em;
+  }
+}
+
+.card__title--results {
+  font-size: 22px;
+  font-weight: 600;
+
+  margin-top: map-get($spacers, 2);
+  margin-bottom: map-get($spacers, 2);
+}
+
+.fixed-share {
+  background-color: $body-bg;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding: 1rem;
+  z-index: 100;
+  button {
+    width: 12em;
+    margin: 0 auto;
+  }
+}
