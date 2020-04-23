@@ -18,7 +18,8 @@ const Game = ({
     wrapperElement
   );
 
-  return <canvas style={{ backgroundColor: 'blue' }} />;
+  return <canvas style={{ backgroundColor: 'blue' }}>
+  </canvas>;
 };
 
 export default Game;
