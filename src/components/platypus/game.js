@@ -15,11 +15,11 @@ function importAllImages(r) {
 }
 
 const score = 0;
-const images = importAllImages(require.context('./images/png', false, '/\.png/'));
+// const images = importAllImages(require.context('./images/png', false, '/\.png/'));
  
 const App = () => {
   return (
-    <div class="game-content" style="background-color: #77CBAF;">
+    <div style={{ backgroundColor: '#77CBAF' }}>
       <GameHeader />
       <GameBody>
 

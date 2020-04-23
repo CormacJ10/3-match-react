@@ -9,8 +9,8 @@ const score = 0;
  
 const GameHeader = () => {
   return (
-    <div class="game-header" style="background-color: #77CBAF;">
-      <p class = "h-100 w-100">{formatScore(score, 6)}</p>
+    <div style={{ backgroundColor: '#77CBAF' }}>
+      {/* <p class = "h-100 w-100">{formatScore(score, 6)}</p> */}
     </div>
   );
 };

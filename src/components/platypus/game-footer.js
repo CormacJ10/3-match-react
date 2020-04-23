@@ -1,4 +1,6 @@
 import React from "react";
+import footer from 'images/png/Tap Circles to Match.png';
+
 // import Unity, { UnityContent } from "react-unity-webgl";
 
 function importAllImages(r) {
@@ -9,12 +11,12 @@ function importAllImages(r) {
 
 
 
-const images = importAllImages(require.context('./images/png', false, '/\.png/'));
+// const images = importAllImages(require.context('./images/png', false, '/\.png/'));
  
 const GameFooter = () => {
   return (
-    <div class="game-footer">
-        <img src={images['Tap Circles to Match.png']} />
+    <div style={{ backgroundColor: '#77CBAF' }}>
+        <img src={footer} />
     </div>
   );
 };
