@@ -1,4 +1,5 @@
 import React from 'react';
+import App from './platypus/game';
 
 const Game = ({
   entered,
@@ -19,6 +20,7 @@ const Game = ({
   );
 
   return <canvas style={{ backgroundColor: '#77CBAF' }}>
+      <App />
   </canvas>;
 };
 
