@@ -19,14 +19,14 @@ const score = 0;
  
 const App = () => {
   return (
-    <div style={{ backgroundColor: '#77CBAF' }}>
-      <GameHeader />
+    <div style={{margin: '10px'}}>
+      {/* <GameHeader /> */}
       <GameBody>
 
       </GameBody>
-      <GameFooter>
+      {/* <GameFooter>
 
-      </GameFooter>
+      </GameFooter> */}
     </div>
   );
 };
