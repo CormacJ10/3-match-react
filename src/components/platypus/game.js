@@ -19,15 +19,9 @@ const score = 0;
  
 const App = () => {
   return (
-    <div style={{margin: '10px'}}>
-      {/* <GameHeader /> */}
       <GameBody>
 
       </GameBody>
-      {/* <GameFooter>
-
-      </GameFooter> */}
-    </div>
   );
 };
 

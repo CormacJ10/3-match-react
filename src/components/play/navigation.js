@@ -24,7 +24,7 @@ export const Navigation = ({
         </ButtonLink>
       </span>
 
-      <span className="hidden-sm mr4">
+      {/* <span className="hidden-sm mr4">
         <ButtonLink
           href={previous}
           disabled={previousDisabled}
@@ -60,7 +60,7 @@ export const Navigation = ({
             'Next'
           )}
         </ButtonLink>
-      </span>
+      </span> */}
     </>
   );
 };

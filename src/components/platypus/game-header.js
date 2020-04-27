@@ -1,5 +1,4 @@
 import React from "react";
-// import Unity, { UnityContent } from "react-unity-webgl";
 
 function formatScore(initScore, maxScore){
   return initScore + " of " + maxScore;
