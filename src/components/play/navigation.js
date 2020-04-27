@@ -13,16 +13,16 @@ export const Navigation = ({
 
   return (
     <>
-      {/* <span className="nav-span show-sm">
+      <span className="nav-span show-sm">
         <ButtonLink
           href={previous}
           disabled={previousDisabled}
-          variant="light"
+          variant="outline-dark"
           className="nav-btn btn--previous br4 "
         >
           Back
         </ButtonLink>
-      </span> */}
+      </span>
 
       {/* <span className="hidden-sm mr4">
         <ButtonLink

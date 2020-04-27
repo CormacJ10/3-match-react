@@ -15,7 +15,7 @@ const ButtonLink = ({ href, transition, ...props }) => {
   // );
 
   return (
-  <Button className="whitebox" style={{marginBottom: '0', padding: '5px', fontStyle: 'bold', fontSize: '25px'}}>
+  <Button className="" style={{marginBottom: '0', padding: '5px', fontStyle: 'bold', fontSize: '25px'}}>
     Tap Circles to Match Patterns
   </Button>
   );

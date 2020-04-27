@@ -12,12 +12,52 @@ function formatScore(initScore, maxScore){
   return initScore + " of " + maxScore;
 }
 
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+const score = 0;
+
+function renderShoe(){
+  let shoeCountList={
+    'shoe1':0,
+    'shoe2':0,
+    'shoe3':0,
+    'shoe4':0,
+    'shoe5':0,
+    'shoe6':0,
+  }
+
+  let shoes={
+    'shoe1':shoe1,
+    'shoe2':shoe2,
+    'shoe3':shoe3,
+    'shoe4':shoe4,
+    'shoe5':shoe5,
+    'shoe6':shoe6,
+  };
+
+  const randCounter = getRandomInt(1, 7);
+  if(shoeCountList['shoe'+randCounter] != 2){
+    shoeCountList['shoe'+randCounter] += 1;
+    return shoes['shoe'+randCounter];
+  }
+
+  console.log(shoeCountList);
+}
+
+//<img className='hide-content' src={renderShoe()} /><img className='' src={platyOval} />
+
 function renderTableCell(col){
   let tableCell = [];
+  const [clicked, setClick] = React.useState(false);
+  const onClick = () => setClick(true);
 
   for(let currCell =0; currCell < col; currCell++){
     // tableCell['curr_cell'+currCell]= <td className='padding-content'><img src={platyOval} /></td>;
-    tableCell.push(<td className='padding-content'><img src={platyOval} /></td>);
+  tableCell.push(<td className='padding-content' onClick={onClick}>{clicked ? <img className='' src={renderShoe()} /> : <img className='' src={platyOval} />}</td>);
     // col++;
   }
   
@@ -37,15 +77,10 @@ function renderTable(column, row){
     }
     return elementArray;
 }
-
-const score = 0;
  
 const GameBody = () => {
   return (
     <div style={{ backgroundColor: 'white', padding: '20px'}}>
-        {/* <div style={{marginBottom: '12px', display: 'flex', color: 'white', justifyContent:'center', alignItems:'center', borderRadius: '10px' }}>
-          <h1 className="" style={{backgroundColor: '#77CBAF', width: '80%', borderRadius: '7px'}}>{formatScore(score, 6)}</h1>
-        </div> */}
         <table style={{display: 'flex', color: 'white', justifyContent:'center', alignItems:'center'}}>
             <tbody>
               {renderTable(3, 4)}
