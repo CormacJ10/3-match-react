@@ -13,7 +13,7 @@ export const Navigation = ({
 
   return (
     <>
-      <span className="nav-span nav-span--split hidden show-sm">
+      {/* <span className="nav-span show-sm">
         <ButtonLink
           href={previous}
           disabled={previousDisabled}
@@ -22,7 +22,7 @@ export const Navigation = ({
         >
           Back
         </ButtonLink>
-      </span>
+      </span> */}
 
       {/* <span className="hidden-sm mr4">
         <ButtonLink

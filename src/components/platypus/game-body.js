@@ -1,6 +1,12 @@
 import React from "react";
 import oval from 'images/png/Oval.png';
 import platyOval from 'images/png/platypus-oval-sm.png';
+import shoe1 from 'images/png/Bitmap-sm.png';
+import shoe2 from 'images/png/Bitmap-1-sm.png';
+import shoe3 from 'images/png/Bitmap-2-sm.png';
+import shoe4 from 'images/png/Bitmap-3-sm.png';
+import shoe5 from 'images/png/Bitmap-4-sm.png';
+import shoe6 from 'images/png/Bitmap-5-sm.png';
 
 function formatScore(initScore, maxScore){
   return initScore + " of " + maxScore;
@@ -10,6 +16,7 @@ function renderTableCell(col){
   let tableCell = [];
 
   for(let currCell =0; currCell < col; currCell++){
+    // tableCell['curr_cell'+currCell]= <td className='padding-content'><img src={platyOval} /></td>;
     tableCell.push(<td className='padding-content'><img src={platyOval} /></td>);
     // col++;
   }
@@ -24,23 +31,10 @@ function renderTable(column, row){
     let elementArray=[];
 
     for(let currNumRow =0; currNumRow < row; currNumRow++){
+      // elementArray['curr_row'+currNumRow]= <tr>{renderTableCell(column)}</tr>;
       elementArray.push(<tr>{renderTableCell(column)}</tr>);
       // currNumRow++;
     }
-
-    // return (<tr>
-    //     <td>
-    //         <img src={platyOval}/>
-    //     </td>
-    //     <td>
-    //         <img src={platyOval} />
-    //     </td>
-    //     <td>
-    //         <img src={platyOval} />
-    //     </td>
-    //     </tr>
-        
-    //     );
     return elementArray;
 }
 
@@ -55,8 +49,6 @@ const GameBody = () => {
         <table style={{display: 'flex', color: 'white', justifyContent:'center', alignItems:'center'}}>
             <tbody>
               {renderTable(3, 4)}
-              {/* {renderTable(3, 4)}
-              {renderTable(3, 4)} */}
             </tbody>
         </table>
         <div style={{marginTop: '12px', display: 'flex', color: 'black', justifyContent:'center', alignItems:'center' }}>
