@@ -1,5 +1,4 @@
 import React from "react";
-import oval from 'images/png/Oval.png';
 import platyOval from 'images/png/platypus-oval-sm.png';
 import shoe1 from 'images/png/Bitmap-sm.png';
 import shoe2 from 'images/png/Bitmap-1-sm.png';
@@ -45,34 +44,34 @@ function renderShoe(){
     return shoes['shoe'+randCounter];
   }
 
-  console.log(shoeCountList);
+  // console.log(shoeCountList);
 }
 
-//<img className='hide-content' src={renderShoe()} /><img className='' src={platyOval} />
+let elementClicked = false;
+function onElementClick(){
+  return elementClicked = true;
+}
 
 function renderTableCell(col){
   let tableCell = [];
-  const [clicked, setClick] = React.useState(false);
-  const onClick = () => setClick(true);
+  // const [clicked, setClick] = React.useState(false);
+  // const onClick = () => setClick(true);
 
   for(let currCell =0; currCell < col; currCell++){
-    // tableCell['curr_cell'+currCell]= <td className='padding-content'><img src={platyOval} /></td>;
-  tableCell.push(<td className='padding-content' onClick={onClick}>{clicked ? <img className='' src={renderShoe()} /> : <img className='' src={platyOval} />}</td>);
-    // col++;
+    tableCell.push(<div className='padding-content'><img className='hide-content' src={renderShoe()} /><img className='' src={platyOval} /></div>);
   }
   
-  // return <td><img src={platyOval} /></td>;
   return tableCell;
 }
 
-function renderTable(column, row){
+function renderTable(row, column){
     // let currNumRow=0;
     // let currNumColumn=0;
     let elementArray=[];
 
     for(let currNumRow =0; currNumRow < row; currNumRow++){
       // elementArray['curr_row'+currNumRow]= <tr>{renderTableCell(column)}</tr>;
-      elementArray.push(<tr>{renderTableCell(column)}</tr>);
+      elementArray.push(<div>{renderTableCell(column)}</div>);
       // currNumRow++;
     }
     return elementArray;
@@ -81,11 +80,9 @@ function renderTable(column, row){
 const GameBody = () => {
   return (
     <div style={{ backgroundColor: 'white', padding: '20px'}}>
-        <table style={{display: 'flex', color: 'white', justifyContent:'center', alignItems:'center'}}>
-            <tbody>
+        <div style={{display: 'flex', color: 'white', justifyContent:'center', alignItems:'center'}}>
               {renderTable(3, 4)}
-            </tbody>
-        </table>
+        </div>
         <div style={{marginTop: '12px', display: 'flex', color: 'black', justifyContent:'center', alignItems:'center' }}>
           <div className="" style={{ backgroundColor: 'white', width: '80%', border: 'solid black 1px', borderRadius: '7px'}}>
             <p style={{marginBottom: '0', padding: '5px', fontStyle: 'bold', fontSize: '25px'}}>Tap Circles to Match Patterns</p>

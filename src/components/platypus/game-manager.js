@@ -12,28 +12,21 @@ function formatScore(initScore, maxScore){
   return initScore + " of " + maxScore;
 }
 
-function renderShoe(){
-  const shoes={
-    'shoe1': 0,
-    'shoe2':0,
-    'shoe3':0,
-    'shoe4':0,
-    'shoe5':0,
-    'shoe6':0
-  };
-
-  
-
-}
-
 const score = 0;
- 
-const GameHeader = () => {
-  return (
-    <div style={{ backgroundColor: '#FFF', color: 'black'}}>
-      <p className="h-100 w-100">{formatScore(score, 6)}</p>
-    </div>
-  );
-};
 
-export default GameHeader;
+const elementClicked = true;
+function onElementClick(){
+  return elementClicked;
+}
+ 
+// const GameHeader = () => {
+//   return (
+//     <div style={{ backgroundColor: '#FFF', color: 'black'}}>
+//       <p className="h-100 w-100">{formatScore(score, 6)}</p>
+//     </div>
+//   );
+// };
+
+export const gameManager = ()=>{
+  onElementClick();
+}
