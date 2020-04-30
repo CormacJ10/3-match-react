@@ -14,34 +14,46 @@ function formatScore(initScore, maxScore){
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  return Math.floor(Math.random()*max)+min;
+}
+
+const shoeCountList={
+  'shoe1':0,
+  'shoe2':0,
+  'shoe3':0,
+  'shoe4':0,
+  'shoe5':0,
+  'shoe6':0,
+}
+
+const shoes={
+  'shoe1':shoe1,
+  'shoe2':shoe2,
+  'shoe3':shoe3,
+  'shoe4':shoe4,
+  'shoe5':shoe5,
+  'shoe6':shoe6,
 }
 
 const score = 0;
 
 function renderShoe(){
-  let shoeCountList={
-    'shoe1':0,
-    'shoe2':0,
-    'shoe3':0,
-    'shoe4':0,
-    'shoe5':0,
-    'shoe6':0,
-  }
 
-  let shoes={
-    'shoe1':shoe1,
-    'shoe2':shoe2,
-    'shoe3':shoe3,
-    'shoe4':shoe4,
-    'shoe5':shoe5,
-    'shoe6':shoe6,
-  };
+  const randCounter = getRandomInt(1, 6);
 
-  const randCounter = getRandomInt(1, 7);
   if(shoeCountList['shoe'+randCounter] != 2){
     shoeCountList['shoe'+randCounter] += 1;
+    // console.log('shoe'+randCounter+":"+shoeCountList['shoe'+randCounter]);
     return shoes['shoe'+randCounter];
+  }
+  else{
+    for(var key in shoeCountList){
+      if(shoeCountList[key] != 2){
+        shoeCountList[key]++;
+        // console.log(key);
+        return shoes[key];
+      }
+    }
   }
 
   // console.log(shoeCountList);
@@ -52,26 +64,39 @@ function onElementClick(){
   return elementClicked = true;
 }
 
+const clicked =false;
+
 function renderTableCell(col){
   let tableCell = [];
-  // const [clicked, setClick] = React.useState(false);
+  const [clicked, setClick] = React.useState(false);
   // const onClick = () => setClick(true);
+  const handleClick = event => {
+    setClick(true);
+  };
 
   for(let currCell =0; currCell < col; currCell++){
-    tableCell.push(<div className='padding-content'><img className='hide-content' src={renderShoe()} /><img className='' src={platyOval} /></div>);
+    // const key = renderShoe();
+    // console.log(key);
+    // tableCell.push(<div className='padding-content' onClick={onClick}><img className='' src={clicked ? renderShoe() : platyOval} /></div>);
+    tableCell.push(<td className='padding-content' onClick={handleClick}>{clicked ? <img className='' src={renderShoe()} /> : <img className='' src={platyOval} />}</td>);
   }
-  
+  // console.log("hello");
   return tableCell;
 }
 
-function renderTable(row, column){
+function renderTable(column, row){
     // let currNumRow=0;
     // let currNumColumn=0;
     let elementArray=[];
 
+    let hndleClick = event => {
+      event.stopPropagation();
+      event.preventDefault();
+    };
+
     for(let currNumRow =0; currNumRow < row; currNumRow++){
       // elementArray['curr_row'+currNumRow]= <tr>{renderTableCell(column)}</tr>;
-      elementArray.push(<div>{renderTableCell(column)}</div>);
+      elementArray.push(<tr onClick={hndleClick}>{renderTableCell(column)}</tr>);
       // currNumRow++;
     }
     return elementArray;
@@ -80,9 +105,11 @@ function renderTable(row, column){
 const GameBody = () => {
   return (
     <div style={{ backgroundColor: 'white', padding: '20px'}}>
-        <div style={{display: 'flex', color: 'white', justifyContent:'center', alignItems:'center'}}>
+        <table style={{display: 'flex', color: 'white', justifyContent:'center', alignItems:'center'}}>
+          <tbody>
               {renderTable(3, 4)}
-        </div>
+          </tbody>
+        </table>
         <div style={{marginTop: '12px', display: 'flex', color: 'black', justifyContent:'center', alignItems:'center' }}>
           <div className="" style={{ backgroundColor: 'white', width: '80%', border: 'solid black 1px', borderRadius: '7px'}}>
             <p style={{marginBottom: '0', padding: '5px', fontStyle: 'bold', fontSize: '25px'}}>Tap Circles to Match Patterns</p>

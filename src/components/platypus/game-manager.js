@@ -14,6 +14,10 @@ function formatScore(initScore, maxScore){
 
 const score = 0;
 
+class GameManager extends React.Component{
+  
+}
+
 const elementClicked = true;
 function onElementClick(){
   return elementClicked;
