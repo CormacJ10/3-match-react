@@ -77,8 +77,8 @@ function renderTableCell(col){
   };
 
   for(let currCell =0; currCell < col; currCell++){
-    // tableCell.push(<div className='padding-content' onClick={onClick}><img className='' src={clicked ? renderShoe() : platyOval} />{clicked ? <img className='' src={platyOval} />  : <img className='' src={renderShoe()} />}</div>);
-    tableCell.push(<td className='padding-content' onClick={onClick}><img className={clicked ? '' : 'hide-content'} src={renderShoe()} /> <img className={clicked ? 'hide-content' : ''} src={platyOval} /></td>);
+    // tableCell.push(<div className='padding-content' onClick={onClick}><img className={clicked ? '' : 'hide-content'} src={renderShoe()} /> <img className={clicked ? 'hide-content' : ''} src={platyOval} /><img className='' src={clicked ? renderShoe() : platyOval} />{clicked ? <img className='' src={platyOval} />  : <img className='' src={renderShoe()} />}</div>);
+    tableCell.push(<td className='padding-content' onClick={onClick}><img className='' src={clicked ? renderShoe() : platyOval} /></td>);
     // tableCell[currCell]=<td className='padding-content' id={'cell'+index} onClick={onClick}><img className={clicked ? '' : 'hide-content'} src={renderShoe()} /> <img className={clicked ? 'hide-content' : ''} src={platyOval} /></td>;
   }
 
