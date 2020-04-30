@@ -64,21 +64,22 @@ function onElementClick(){
   return elementClicked = true;
 }
 
-const clicked =false;
+// const clicked =false;
 
 function renderTableCell(col){
   let tableCell = [];
   const [clicked, setClick] = React.useState(false);
   // const onClick = () => setClick(true);
-  const handleClick = event => {
+  const onClick = event => {
     setClick(true);
   };
 
   for(let currCell =0; currCell < col; currCell++){
-    // const key = renderShoe();
+    const key = renderShoe();
     // console.log(key);
-    // tableCell.push(<div className='padding-content' onClick={onClick}><img className='' src={clicked ? renderShoe() : platyOval} /></div>);
-    tableCell.push(<td className='padding-content' onClick={handleClick}>{clicked ? <img className='' src={renderShoe()} /> : <img className='' src={platyOval} />}</td>);
+    tableCell.push(<div className='padding-content' onClick={onClick}><img className='' src={clicked ? renderShoe() : platyOval} />{clicked ? <img className='' src={platyOval} />  : <img className='' src={renderShoe()} />}</div>);
+    // tableCell.push(<td className='padding-content' onClick={onClick}><img className={clicked ? '' : 'hide-content'} data-key={key} src={key} /> <img className={clicked ? 'hide-content' : ''} src={platyOval} /></td>);
+    // tableCell[currCell]=<td className='padding-content' onClick={onClick}>{clicked ? <img className='' src={renderShoe()} /> : <img className='' src={platyOval} />}</td>;
   }
   // console.log("hello");
   return tableCell;

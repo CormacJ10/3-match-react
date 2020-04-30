@@ -12,11 +12,30 @@ function formatScore(initScore, maxScore){
   return initScore + " of " + maxScore;
 }
 
+function renderShoe(){
+
+  const randCounter = getRandomInt(1, 6);
+
+  if(shoeCountList['shoe'+randCounter] != 2){
+    shoeCountList['shoe'+randCounter] += 1;
+    return shoes['shoe'+randCounter];
+  }
+  else{
+    for(var key in shoeCountList){
+      if(shoeCountList[key] != 2){
+        shoeCountList[key]++;
+        // console.log(key);
+        return shoes[key];
+      }
+    }
+  }
+}
+
 const score = 0;
 
-class GameManager extends React.Component{
-  
-}
+const platyIcon = <img className='' src={platyOval} />;
+
+const shoe = <img className='' src={renderShoe()} />;
 
 const elementClicked = true;
 function onElementClick(){
