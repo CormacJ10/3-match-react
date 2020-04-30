@@ -1,11 +1,13 @@
 import React from "react";
 import platyOval from 'images/png/platypus-oval-sm.png';
+import { render } from 'react-dom';
 import shoe1 from 'images/png/Bitmap-sm.png';
 import shoe2 from 'images/png/Bitmap-1-sm.png';
 import shoe3 from 'images/png/Bitmap-2-sm.png';
 import shoe4 from 'images/png/Bitmap-3-sm.png';
 import shoe5 from 'images/png/Bitmap-4-sm.png';
 import shoe6 from 'images/png/Bitmap-5-sm.png';
+// import {oval, shoe} from './platypus/game-manager';
 
 function formatScore(initScore, maxScore){
   return initScore + " of " + maxScore;
@@ -75,20 +77,22 @@ function renderTableCell(col){
   };
 
   for(let currCell =0; currCell < col; currCell++){
-    const key = renderShoe();
-    // console.log(key);
-    tableCell.push(<div className='padding-content' onClick={onClick}><img className='' src={clicked ? renderShoe() : platyOval} />{clicked ? <img className='' src={platyOval} />  : <img className='' src={renderShoe()} />}</div>);
-    // tableCell.push(<td className='padding-content' onClick={onClick}><img className={clicked ? '' : 'hide-content'} data-key={key} src={key} /> <img className={clicked ? 'hide-content' : ''} src={platyOval} /></td>);
-    // tableCell[currCell]=<td className='padding-content' onClick={onClick}>{clicked ? <img className='' src={renderShoe()} /> : <img className='' src={platyOval} />}</td>;
+    // tableCell.push(<div className='padding-content' onClick={onClick}><img className='' src={clicked ? renderShoe() : platyOval} />{clicked ? <img className='' src={platyOval} />  : <img className='' src={renderShoe()} />}</div>);
+    tableCell.push(<td className='padding-content' onClick={onClick}><img className={clicked ? '' : 'hide-content'} src={renderShoe()} /> <img className={clicked ? 'hide-content' : ''} src={platyOval} /></td>);
+    // tableCell[currCell]=<td className='padding-content' id={'cell'+index} onClick={onClick}><img className={clicked ? '' : 'hide-content'} src={renderShoe()} /> <img className={clicked ? 'hide-content' : ''} src={platyOval} /></td>;
   }
-  // console.log("hello");
+
+  // render(tableCell.map((item, index) => {
+  //   <td className='padding-content' id={'cell'+index} onClick={onClick}>{item}</td>
+  // }));
+  
   return tableCell;
 }
 
 function renderTable(column, row){
     // let currNumRow=0;
     // let currNumColumn=0;
-    let elementArray=[];
+    let tableRow=[];
 
     let hndleClick = event => {
       event.stopPropagation();
@@ -96,16 +100,17 @@ function renderTable(column, row){
     };
 
     for(let currNumRow =0; currNumRow < row; currNumRow++){
+      const rowId = 'row'+currNumRow;
       // elementArray['curr_row'+currNumRow]= <tr>{renderTableCell(column)}</tr>;
-      elementArray.push(<tr onClick={hndleClick}>{renderTableCell(column)}</tr>);
+      tableRow.push(<tr onClick={hndleClick}>{renderTableCell(column)}</tr>);
       // currNumRow++;
     }
-    return elementArray;
+    return tableRow;
 }
  
 const GameBody = () => {
   return (
-    <div style={{ backgroundColor: 'white', padding: '20px'}}>
+    <div style={{backgroundColor: 'white', padding: '20px'}}>
         <table style={{display: 'flex', color: 'white', justifyContent:'center', alignItems:'center'}}>
           <tbody>
               {renderTable(3, 4)}

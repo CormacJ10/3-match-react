@@ -17,7 +17,7 @@ export const Navigation = ({
         <ButtonLink
           href={previous}
           disabled={previousDisabled}
-          variant="outline-dark"
+          variant="dark"
           className="nav-btn btn--previous br4 "
         >
           Back

@@ -12,6 +12,30 @@ function formatScore(initScore, maxScore){
   return initScore + " of " + maxScore;
 }
 
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random()*max)+min;
+}
+
+const shoeCountList={
+  'shoe1':0,
+  'shoe2':0,
+  'shoe3':0,
+  'shoe4':0,
+  'shoe5':0,
+  'shoe6':0,
+}
+
+const shoes={
+  'shoe1':shoe1,
+  'shoe2':shoe2,
+  'shoe3':shoe3,
+  'shoe4':shoe4,
+  'shoe5':shoe5,
+  'shoe6':shoe6,
+}
+
 function renderShoe(){
 
   const randCounter = getRandomInt(1, 6);
@@ -33,9 +57,9 @@ function renderShoe(){
 
 const score = 0;
 
-const platyIcon = <img className='' src={platyOval} />;
+const PlatyIcon = <img className='' src={platyOval} />;
 
-const shoe = <img className='' src={renderShoe()} />;
+const Shoe = <img className='' src={renderShoe()} />;
 
 const elementClicked = true;
 function onElementClick(){
@@ -50,6 +74,7 @@ function onElementClick(){
 //   );
 // };
 
-export const gameManager = ()=>{
-  onElementClick();
+export {
+  PlatyIcon,
+  Shoe
 }
