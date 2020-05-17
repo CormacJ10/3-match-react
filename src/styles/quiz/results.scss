@@ -12,10 +12,6 @@
   svg {
     height: 60px;
   }
-
-  @include media-breakpoint-up(md) {
-    // margin: 0 0 1em;
-  }
 }
 
 .card__results {
@@ -34,12 +30,41 @@
   }
 }
 
+.title--answers {
+  font-size: 1.4em;
+  background: #FFF;
+  color: #000;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  border-radius: 1rem;
+}
+
+.card-section {
+  &--correct {
+    color: $success;
+  }
+
+  &--incorrect {
+    color: $danger;
+  }
+
+}
+
+.guess__text, .answer__text {
+  font-size: 1.2em;
+}
+
 .card__title--results {
-  font-size: 22px;
+  font-size: 1.2em;
   font-weight: 600;
 
   margin-top: map-get($spacers, 2);
   margin-bottom: map-get($spacers, 2);
+}
+
+.card__subtitle--results {
+  font-size: 0.8rem;
 }
 
 .fixed-share {
@@ -51,7 +76,7 @@
   padding: 1rem;
   z-index: 100;
   button {
-    width: 12em;
+    min-width: 10em;
     margin: 0 auto;
   }
 }

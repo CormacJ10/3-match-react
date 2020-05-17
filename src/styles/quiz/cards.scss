@@ -42,10 +42,16 @@
 
 .card__title {
   color: $modal-content-color;
+  font-size: 1.4em;
 }
 
 .card-title {
-  font-size: 1.4em;
+  font-size: 1em;
+  width: 90%;
+  margin: 0 auto;
+  @include media-breakpoint-up(sm) {
+    font-size: 1.2em;
+  }
   font-weight: 600;
   line-height: 200%;
   text-align: center;
@@ -57,8 +63,9 @@
 }
 
 .card__trivia {
+  font-size: 0.9em;
   svg {
-    height: 4em;
+    height: 3em;
   }
 }
 
@@ -66,6 +73,8 @@
   width: 100%;
   color: $card-bg;
   text-align: center;
+  padding: 0.5rem;
+  padding-bottom: 0;
 }
 
 .page--card {

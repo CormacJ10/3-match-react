@@ -1,5 +1,5 @@
 .container--quiz {
-  max-width: $width-lg;
+  max-width: $width-md;
   margin: 0 auto;
 }
 
@@ -38,7 +38,6 @@
 
 .page--card {
   @include media-breakpoint-up(md) {
-    // padding: 1em 0;
     align-content: start;
   }
   height: 100%;
@@ -71,7 +70,6 @@
 
 .page--splash {
   height: calc(100vh - 60px);
-  // width: calc(100% - 2em);
   @include media-breakpoint-up(md) {
     width: calc(100% - 4em);
   }
@@ -91,9 +89,6 @@
     display: flex;
     justify-content: center;
   }
-}
-
-.page__terms-link {
 }
 
 .page__nav.page__nav--share {

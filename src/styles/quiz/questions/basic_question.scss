@@ -1,6 +1,12 @@
 .page--basic-question {
   grid-template-rows: min-content 1fr min-content;
 
+  .card-title {
+    @include media-breakpoint-up(sm) {
+      line-height: 150%;
+    }
+  }
+
   .page__card {
     grid-template-rows: min-content min-content 1fr min-content;
   }
@@ -14,6 +20,14 @@
   }
 
   .card__trivia {
+    width: 100%;
+    margin: 0 auto;
+    @include media-breakpoint-up(md) {
+      width: 70%;
+    }
+    @include media-breakpoint-up(lg) {
+      width: 60%;
+    }
   }
 
   @include media-breakpoint-up(md) {
@@ -23,18 +37,42 @@
       grid-template-rows: min-content min-content min-content 1fr min-content;
     }
   }
-}
 
-.basic-question--size-regular {
-  .page__card > .card-body {
-    grid-template-columns: 1fr;
-    grid-auto-rows: min-content;
-
-    overflow-y: auto;
+  .option-set--size-regular {
+    padding-bottom: 1em;
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
   }
 }
 
+.basic-question--size-regular {
+  .basic-question-card {
+    overflow-y: scroll;
+    display: block;
+    .option-set--size-regular, .card__trivia {
+      position: static;
+    }
+  }
+}
+
+.basic-question {
+
+}
+
 .basic-question--size-large {
+  .basic-question-card {
+    overflow: scroll;
+    flex: 1;
+    justify-content: flex-start;
+    .option-set--size-large {
+    }
+    .card__trivia {
+      padding-top: 0;
+    }
+  }
+
   .page__card > .card-body {
     grid-template-rows: 1fr min-content;
     grid-template-columns: 1fr;

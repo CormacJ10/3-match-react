@@ -1,29 +1,85 @@
 .page--disappearing-image {
   grid-template-rows: auto 1fr auto;
 
-  .page__card {
-    grid-template-rows: min-content min-content 1fr min-content;
+  .card-body {
+    padding-bottom: 0px;
+    padding-top: 0px;
+    @include media-breakpoint-up(sm) {
+      padding-bottom: .25em;
+      padding-top: .25em;
+    }
   }
 
-  .page__card > .card-body {
+  .card-wrapper {
+    padding-bottom: 0;
+    padding-top: 0;
+    @include media-breakpoint-up(sm) {
+      padding-bottom: 1rem;
+    }
+  }
+
+  .option-set--size-regular {
     display: grid;
-    grid-template: minmax(4em, 4fr) minmax(3em, 1fr) 5fr min-content / 1fr;
-    grid-gap: 1em;
-    gap: 1em;
+    grid-template-columns: 50% 50%;
+    grid-auto-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+    column-gap: 4%;
+    grid-column-gap: 4%;
+    padding-bottom: 1rem;
+    padding-top: 0rem;
+    margin: auto;
+    width: 100%;
+    position: relative;
 
-    height: 100%;
+    .option--size-regular {
+      margin: 0 auto;
+      width: 100%;
+      @include media-breakpoint-up(sm) {
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+      }
+    }
+
+    &.option-set--entered {
+    }
+
+    .option__icon {
+      display: none;
+    }
+
+    .option__text {
+      text-align: center;
+    }
   }
 
-  .card-body__disappearing-image {
+  .card-body__countdown {
+    margin-top: 0;
+  }
 
-    & > img {
-      height: 100%;
+  .card--disappearing-image {
+    flex: 1;
+    overflow-x: hidden;
+    color: #000;
+    padding: 0 1.25rem;
+    .card-title {
+      font-size: 1.1em;
+      line-height: 150%;
+    }
+    img {
+      object-fit: contain;
+      height: 35%;
+    }
+    .card__title {
       width: 100%;
     }
   }
 
   .countdown__number {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    @include media-breakpoint-up(sm) {
+      font-size: 2rem;
+    }
     font-weight: 300;
     line-height: 1.2;
   }

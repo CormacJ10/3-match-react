@@ -6,16 +6,10 @@
     "build": "webpack"
   },
   "dependencies": {
-    "-": "0.0.1",
     "bootstrap": "^4.4.1",
-    "g": "^2.0.1",
-    "netlify": "^4.0.5",
     "react": "^16.13.1",
-    "react-animations": "^1.0.0",
     "react-bootstrap": "^1.0.0",
     "react-dom": "^16.13.1",
-    "react-godot": "^1.0.0",
-    "react-table": "^7.0.4",
     "tachyons": "^4.11.1"
   },
   "devDependencies": {

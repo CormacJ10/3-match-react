@@ -1,5 +1,7 @@
 import 'tachyons';
 import 'styles/main.scss';
+import 'styles/platypus/buttons.scss';
+import 'styles/platypus/game.scss';
 
 import React from 'react';
 import { render } from 'react-dom';

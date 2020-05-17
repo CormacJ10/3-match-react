@@ -15,6 +15,12 @@ section {
   text-align: center;
 }
 
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 #app-root {
   display: flex;
   flex-direction: column;
@@ -22,7 +28,7 @@ section {
   min-height: -webkit-fill-available;
   justify-content: space-between;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
   > * {
     position: absolute;
     &.results--page {
@@ -30,7 +36,7 @@ section {
       position: static;
     }
     @include media-breakpoint-up(sm) {
-      padding: 2rem;
+      padding: 1rem;
       &.results--page {
         padding-bottom: 4.5rem;
       }
@@ -42,12 +48,8 @@ section {
 
 }
 
-.header-image {
-  width: 100%;
-
-  @include media-breakpoint-up(md) {
-    border-radius: 0 0 $card-radius $card-radius;
-  }
+.header--image {
+  max-height: 200px;
 }
 
 .img-fluid--vertical {
@@ -65,10 +67,13 @@ section {
 
 .nav-span--split {
   @include media-breakpoint-down(sm) {
-    width: 12em;
+    min-width: 10em;
   }
 }
 
+.nav-btn {
+  height: 2.5rem;
+}
 .scroll-port {
   overflow-y: auto;
 }

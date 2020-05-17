@@ -1,11 +1,10 @@
 import header from 'images/header.png';
 import React from 'react';
+import {score} from './platypus/game-manager';
 
 function formatScore(initScore, maxScore){
   return initScore + " of " + maxScore;
 }
-
-const score = 0;
 
 const HeaderImage = () => (
   <header className="">

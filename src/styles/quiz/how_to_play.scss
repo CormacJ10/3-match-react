@@ -1,16 +1,11 @@
+
+
 .page--how-to-play {
-  .page__card {
-    grid-template-rows: 1fr;
-
-    @include media-breakpoint-up(md) {
-      grid-template-rows: min-content 1fr min-content;
+  .title-text {
+    margin: 0.5em;
+    @include media-breakpoint-up(sm) {
+      margin: 1em;
     }
-  }
-
-  .card-body {
-    justify-items: center;
-
-    width: 95%;
   }
 }
 
@@ -90,9 +85,17 @@
   }
 }
 
+.item__inner {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
 .icon--how-to-play {
   margin-top: map-get($spacers, 2);
   margin-bottom: map-get($spacers, 4);
+  width: 95px;
+  margin: 0 auto 3rem;
 }
 
 .title--how-to-play {
@@ -109,7 +112,7 @@
 }
 
 .text--how-to-play {
-  font-size: 22px;
+  font-size: 1rem;
   font-weight: 600;
 
   margin-top: map-get($spacers, 3);

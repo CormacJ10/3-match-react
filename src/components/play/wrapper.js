@@ -30,7 +30,7 @@ export const Wrapper = ({
   ]);
 
   return (
-    <div className="h-100 flex flex-column w100 center">
+    <div className="h-100 flex flex-column w100 center overflow-y-hidden interactive__wrapper">
       <HeaderImage />
 
       <CardWrapper>

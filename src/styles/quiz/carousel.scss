@@ -4,11 +4,6 @@
 
 .carousel-control-prev {
   left: -15px;
-
-  @include media-breakpoint-up(sm) {
-    left: -67.5px;
-  }
-
   svg {
     height: 54px;
   }
@@ -16,11 +11,6 @@
 
 .carousel-control-next {
   right: -15px;
-
-  @include media-breakpoint-up(sm) {
-    right: -67.5px;
-  }
-
   svg {
     height: 54px;
   }

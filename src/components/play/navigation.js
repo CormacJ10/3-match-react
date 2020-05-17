@@ -13,18 +13,18 @@ export const Navigation = ({
 
   return (
     <>
-      <span className="nav-span show-sm">
+      {/* <span className="nav-span nav-span--split hidden show-sm">
         <ButtonLink
           href={previous}
           disabled={previousDisabled}
-          variant="dark"
+          variant="light"
           className="nav-btn btn--previous br4 "
         >
           Back
         </ButtonLink>
       </span>
 
-      {/* <span className="hidden-sm mr4">
+      <span className="hidden-sm mr4">
         <ButtonLink
           href={previous}
           disabled={previousDisabled}

@@ -27,3 +27,11 @@
 .icon-path--start {
   stroke: $body-color;
 }
+
+.btn-dark .icon-path--start {
+  stroke: #fff;
+}
+
+.btn-light .icon-path--start {
+  stroke: #000;
+}
