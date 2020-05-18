@@ -219,7 +219,7 @@ const GameBody = () => {
 
   return (
     <div style={{backgroundColor: 'white', padding: '20px'}}>
-      <h1 className="br4-ns br--top-ns w100" style={{backgroundColor: '#77CBAF', fontSize: '50px', color: 'white'}}>{formatScore(score, 6)}</h1>
+      <h1 className="br4-ns br--top-ns w100 game-header" >{formatScore(score, 6)}</h1>
         <table style={{display: 'flex', color: 'white', justifyContent:'center', alignItems:'center'}}>
           <tbody>
           <tr data-row-id="1">
@@ -282,7 +282,7 @@ const GameBody = () => {
         </table>
         <div style={{marginTop: '12px', display: 'flex', color: 'black', justifyContent:'center', alignItems:'center' }}>
           <div className="" style={{ backgroundColor: 'white', width: '80%', border: 'solid black 1px', borderRadius: '7px'}}>
-            <p style={{marginBottom: '0', padding: '5px', fontStyle: 'bold', fontSize: '25px'}}>Tap Circles to Match Patterns</p>
+            <p className="game-footer">Tap Circles to Match Patterns</p>
           </div>
         </div>
     </div>
