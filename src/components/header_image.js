@@ -1,6 +1,6 @@
 import header from 'images/header.png';
 import React from 'react';
-import {score} from './platypus/game-manager';
+import {score} from './platypus/game-body';
 
 function formatScore(initScore, maxScore){
   return initScore + " of " + maxScore;

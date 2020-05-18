@@ -41,16 +41,13 @@ function renderShoe(){
     shoeCountList['shoe'+randCounter] += 1;
     return ['shoe'+randCounter, shoes['shoe'+randCounter]];
   }
-
   else{
-
     for(var key in shoeCountList){
       if(shoeCountList[key] != 2){
         shoeCountList[key]++;
         return ['shoe'+key, shoes[key]];
       }
     }
-
   }
 }
 
@@ -70,36 +67,33 @@ const renderedShoe12=renderShoe();
 
 var shoeCheckCount = 0;
 var score = 0;
-let shoeCheckList = {};
-let shoeEventList = {};
 function checkIfSameShoe(shoeObj, shoeName, isClicked){
-  shoeCount+=1;
+  let shoeCheckList = {};
+  
   shoeCheckList[shoeName] = shoeObj;
-  shoeEventList[shoeName] = isClicked;
 
-  // console.log(Object.keys(shoeCheckList).length);
-  // console.log(shoeCount);
-  let shoeCount = Object.keys(shoeCheckList).length;
-  // console.log(shoeName);
+  console.log(shoeCheckList.length);
+  shoeCheckCount++;
+  if(shoeCheckCount == 1){
+    console.log(shoeName);
+    return shoeObj;
+  }
 
-  if(shoeCount == 2){
+  if(shoeCheckCount == 2){
     var firstKey = Object.keys(shoeCheckList)[0];
     var secondKey = Object.keys(shoeCheckList)[1];
     if(shoeCheckList[firstKey] == shoeCheckList[secondKey]){
       score += 1;
+      return shoeObj;
     }
     
     else{
-      for(var key in shoeCountList){
-        shoeEventList[key] = false;
+      isClicked = false;
+      for(var x = 0; x < shoeCheckCount; x++){
+        return platyOval;
       }
     }
-
-    shoeCheckList={};
-    shoeEventList={};
-
-    // console.log(Object.keys(shoeCheckList).length);
-    // console.log(Object.keys(shoeEventList).length);
+    shoeCheckCount = 0;
   }
 }
  
@@ -196,46 +190,46 @@ const GameBody = () => {
           <tbody>
           <tr data-row-id="1">
             <td data-column-id="1" className='padding-content' onClick={onClick1}>
-              {clicked1 ? <img className={renderedShoe1[0]} src={renderedShoe1[1]} onLoad={checkIfSameShoe(renderedShoe1[1], 'shoe-1', clicked1)} /> : <img className='' src={platyOval} />}
+              {clicked1 ? <img className={renderedShoe1[0]} src={checkIfSameShoe(renderedShoe1[1], 'shoe-1', clicked1)} /> : <img className='' src={platyOval} />}
             </td>
             <td data-column-id="2" className='padding-content' onClick={onClick2}>
-              {clicked2 ? <img className={renderedShoe2[0]} src={renderedShoe2[1]} onLoad={checkIfSameShoe(renderedShoe2[1], 'shoe-2', clicked2)} /> : <img className='' src={platyOval} />}
+              {clicked2 ? <img className={renderedShoe2[0]} src={checkIfSameShoe(renderedShoe2[1], 'shoe-2', clicked2)} /> : <img className='' src={platyOval} />}
             </td>
             <td data-column-id="3" className='padding-content' onClick={onClick3}>
-              {clicked3 ? <img className={renderedShoe3[0]} src={renderedShoe3[1]} onLoad={checkIfSameShoe(renderedShoe3[1], 'shoe-3', clicked3)} /> : <img className='' src={platyOval} />}
+              {clicked3 ? <img className={renderedShoe3[0]} src={checkIfSameShoe(renderedShoe3[1], 'shoe-3', clicked3)}/> : <img className='' src={platyOval} />}
             </td>
           </tr>
           <tr data-row-id="2">
             <td data-column-id="1" className='padding-content' onClick={onClick4}>
-              {clicked4 ? <img className={renderedShoe4[0]} src={renderedShoe4[1]} onLoad={checkIfSameShoe(renderedShoe4[1], 'shoe-4', clicked4)} /> : <img className='' src={platyOval} />}
+              {clicked4 ? <img className={renderedShoe4[0]} src={checkIfSameShoe(renderedShoe4[1], 'shoe-4', clicked4)} /> : <img className='' src={platyOval} />}
             </td>
             <td data-column-id="2" className='padding-content' onClick={onClick5}>
-              {clicked5 ? <img className={renderedShoe5[0]} src={renderedShoe5[1]} onLoad={checkIfSameShoe(renderedShoe5[1], 'shoe-5', clicked5)} /> : <img className='' src={platyOval} />}
+              {clicked5 ? <img className={renderedShoe5[0]} src={checkIfSameShoe(renderedShoe5[1], 'shoe-5', clicked5)} /> : <img className='' src={platyOval} />}
             </td>
             <td data-column-id="3" className='padding-content' onClick={onClick6}>
-              {clicked6 ? <img className={renderedShoe6[0]} src={renderedShoe6[1]} onLoad={checkIfSameShoe(renderedShoe6[1], 'shoe-6', clicked6)} /> : <img className='' src={platyOval} />}
+              {clicked6 ? <img className={renderedShoe6[0]} src={checkIfSameShoe(renderedShoe6[1], 'shoe-6', clicked6)} /> : <img className='' src={platyOval} />}
             </td>
           </tr>
           <tr data-row-id="3">
             <td data-column-id="1" className='padding-content' onClick={onClick7}>
-              {clicked7 ? <img className={renderedShoe7[0]} src={renderedShoe7[1]} onLoad={checkIfSameShoe(renderedShoe7[1], 'shoe-7', clicked7)} /> : <img className='' src={platyOval} />}
+              {clicked7 ? <img className={renderedShoe7[0]} src={checkIfSameShoe(renderedShoe7[1], 'shoe-7', clicked7)} /> : <img className='' src={platyOval} />}
             </td>
             <td data-column-id="2" className='padding-content' onClick={onClick8}>
-              {clicked8 ? <img className={renderedShoe8[0]} src={renderedShoe8[1]} onLoad={checkIfSameShoe(renderedShoe8[1], 'shoe-8', clicked8)} /> : <img className='' src={platyOval} />}
+              {clicked8 ? <img className={renderedShoe8[0]} src={checkIfSameShoe(renderedShoe8[1], 'shoe-8', clicked8)} /> : <img className='' src={platyOval} />}
             </td>
             <td data-column-id="3" className='padding-content' onClick={onClick9}>
-              {clicked9 ? <img className={renderedShoe9[0]} src={renderedShoe9[1]} onLoad={checkIfSameShoe(renderedShoe9[1], 'shoe-9', clicked9)} /> : <img className='' src={platyOval} />}
+              {clicked9 ? <img className={renderedShoe9[0]} src={checkIfSameShoe(renderedShoe9[9], 'shoe-9', clicked9)}/> : <img className='' src={platyOval} />}
             </td>
           </tr>
           <tr data-row-id="4">
             <td data-column-id="1" className='padding-content' onClick={onClick10}>
-              {clicked10 ? <img className={renderedShoe10[0]} src={renderedShoe10[1]} onLoad={checkIfSameShoe(renderedShoe10[1], 'shoe-10', clicked10)} /> : <img className='' src={platyOval} />}
+              {clicked10 ? <img className={renderedShoe10[0]} src={checkIfSameShoe(renderedShoe10[1], 'shoe-10', clicked10)}/> : <img className='' src={platyOval} />}
             </td>
             <td data-column-id="2" className='padding-content' onClick={onClick11}>
-              {clicked11 ? <img className={renderedShoe11[0]} src={renderedShoe11[1]} onLoad={checkIfSameShoe(renderedShoe11[1], 'shoe-11', clicked11)} /> : <img className='' src={platyOval} />}
+              {clicked11 ? <img className={renderedShoe11[0]} src={checkIfSameShoe(renderedShoe11[1], 'shoe-11', clicked11)} /> : <img className='' src={platyOval} />}
             </td>
             <td data-column-id="3" className='padding-content' onClick={onClick12}>
-              {clicked12 ? <img className={renderedShoe12[0]} src={renderedShoe12[1]} onLoad={checkIfSameShoe(renderedShoe12[1], 'shoe-12', clicked12)} /> : <img className='' src={platyOval} />}
+              {clicked12 ? <img className={renderedShoe12[0]} src={checkIfSameShoe(renderedShoe12[1], 'shoe-12', clicked12)} /> : <img className='' src={platyOval} />}
             </td>
           </tr>
           </tbody>
