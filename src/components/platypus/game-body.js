@@ -9,6 +9,10 @@ import shoe5 from 'images/png/Bitmap-4-sm.png';
 import shoe6 from 'images/png/Bitmap-5-sm.png';
 // import score from './game-manager';
 
+function formatScore(initScore, maxScore){
+  return initScore + " of " + maxScore;
+}
+
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -68,25 +72,42 @@ const renderedShoe10=renderShoe();
 const renderedShoe11=renderShoe();
 const renderedShoe12=renderShoe();
 
-var shoeCheckCount = 0;
+var isScoreChanged = false;
 var score = 0;
 let shoeCheckList = {};
 let shoeEventList = {};
+let shoeCheckedList = {};
 function checkIfSameShoe(shoeObj, shoeName, isClicked){
-  shoeCount+=1;
+  // shoeCount+=1;
   shoeCheckList[shoeName] = shoeObj;
   shoeEventList[shoeName] = isClicked;
+  shoeCount = Object.keys(shoeCheckList).length;
+
+  
+  console.log(Object.keys(shoeCheckList).length);
+  console.log(Object.keys(shoeEventList).length);
 
   // console.log(Object.keys(shoeCheckList).length);
   // console.log(shoeCount);
   let shoeCount = Object.keys(shoeCheckList).length;
   // console.log(shoeName);
 
+  if(shoeCount == 1 && isClicked == false){
+    // shoeCheckList={};
+    // shoeEventList={};
+  }
+
   if(shoeCount == 2){
     var firstKey = Object.keys(shoeCheckList)[0];
     var secondKey = Object.keys(shoeCheckList)[1];
     if(shoeCheckList[firstKey] == shoeCheckList[secondKey]){
-      score += 1;
+      if(shoeCheckedList[firstKey] == null){
+        shoeCheckedList[firstKey] = shoeCheckList[firstKey];
+        score += 1;
+      }
+      isScoreChanged = true;
+      // console.log(formatScore(score, 6));
+      console.log(isScoreChanged);
     }
     
     else{
@@ -97,6 +118,7 @@ function checkIfSameShoe(shoeObj, shoeName, isClicked){
 
     shoeCheckList={};
     shoeEventList={};
+    // console.log(score);
 
     // console.log(Object.keys(shoeCheckList).length);
     // console.log(Object.keys(shoeEventList).length);
@@ -106,92 +128,57 @@ function checkIfSameShoe(shoeObj, shoeName, isClicked){
 const GameBody = () => {
   const [clicked1, setClick1] = React.useState(false);
   const onClick1 = event => {
-    setClick1(true);
-  };
-  const onClick1F = () => {
-    setClick1(false);
+    !clicked1 ? setClick1(true) : setClick1(false);
   };
   const [clicked2, setClick2] = React.useState(false);
   const onClick2 = event => {
-    setClick2(true);
-  };
-  const onClick2F = () => {
-    setClick2(false);
+    !clicked2 ? setClick2(true) : setClick2(false);
   };
   const [clicked3, setClick3] = React.useState(false);
   const onClick3 = event => {
-    setClick3(true);
-  };
-  const onClick3F = event => {
-    setClick3(false);
+    !clicked3 ? setClick3(true) : setClick3(false);
   };
   const [clicked4, setClick4] = React.useState(false);
   const onClick4 = event => {
-    setClick4(true);
-  };
-  const onClick4F = () => {
-    setClick4(false);
+    !clicked4 ? setClick4(true) : setClick4(false);
   };
   const [clicked5, setClick5] = React.useState(false);
   const onClick5 = event => {
-    setClick5(true);
-  };
-  const onClick5F = () => {
-    setClick5(false);
+    !clicked5 ? setClick5(true) : setClick5(false);
   };
   const [clicked6, setClick6] = React.useState(false);
   const onClick6 = event => {
-    setClick6(true);
-  };
-  const onClick6F = () => {
-    setClick6(false);
+    !clicked6 ? setClick6(true) : setClick6(false);
   };
   const [clicked7, setClick7] = React.useState(false);
   const onClick7 = event => {
-    setClick7(true);
-  };
-  const onClick7F = () => {
-    setClick7(false);
+    !clicked7 ? setClick7(true) : setClick7(false);
   };
   const [clicked8, setClick8] = React.useState(false);
   const onClick8 = event => {
-    setClick8(true);
-  };
-  const onClick8F = () => {
-    setClick8(false);
+    !clicked8 ? setClick8(true) : setClick8(false);
   };
   const [clicked9, setClick9] = React.useState(false);
   const onClick9 = event => {
-    setClick9(true);
-  };
-  const onClick9F = () => {
-    setClick9(false);
+    !clicked9 ? setClick9(true) : setClick9(false);
   };
   const [clicked10, setClick10] = React.useState(false);
   const onClick10 = event => {
-    setClick10(true);
-  };
-  const onClick10F = event => {
-    setClick10(false);
+    !clicked10 ? setClick10(true) : setClick10(false);
   };
   const [clicked11, setClick11] = React.useState(false);
   const onClick11 = event => {
-    setClick11(true);
-  };
-  const onClick11F = () => {
-    setClick11(false);
+    !clicked11 ? setClick11(true) : setClick11(false);
   };
   const [clicked12, setClick12] = React.useState(false);
   const onClick12 = event => {
-    setClick12(true);
-  };
-  const onClick12F = () => {
-    setClick12(false);
+    !clicked12 ? setClick12(true) : setClick12(false);
   };
 
 
   return (
     <div style={{backgroundColor: 'white', padding: '20px'}}>
+      <h1 className="br4-ns br--top-ns w100" style={{backgroundColor: '#77CBAF', fontSize: '50px', color: 'white'}}>{formatScore(score, 6)}</h1>
         <table style={{display: 'flex', color: 'white', justifyContent:'center', alignItems:'center'}}>
           <tbody>
           <tr data-row-id="1">
@@ -249,4 +236,8 @@ const GameBody = () => {
   );
 };
 
-export {GameBody, score};
+const currScore = score;
+
+const canScoreChange = isScoreChanged;
+
+export {GameBody, currScore, canScoreChange};
