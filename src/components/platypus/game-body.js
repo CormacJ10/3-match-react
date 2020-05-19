@@ -76,12 +76,9 @@ const renderedShoe10=renderShoe();
 const renderedShoe11=renderShoe();
 const renderedShoe12=renderShoe();
 
-var isScoreChanged = false;
 var score = 0;
 let shoeCheckList = {};
-let shoeEventList = {};
 let shoeCheckedList = [];
-let isPair = true;
 
 function checkIfSameShoe2(isClicked2, shoeObj2, shoeName2){
   if(isClicked2){
@@ -92,35 +89,19 @@ function checkIfSameShoe2(isClicked2, shoeObj2, shoeName2){
       if(shoeCount2 == 2){
         var firstKey = Object.keys(shoeCheckList)[0];
         var secondKey = Object.keys(shoeCheckList)[1];
-        console.log(secondKey);
-        console.log(firstKey);
-        console.log(shoeCheckList[firstKey] == shoeCheckList[secondKey]);
         if(shoeCheckList[firstKey] == shoeCheckList[secondKey]){
           if(!shoeCheckedList.includes(shoeCheckList[firstKey])){
             shoeCheckedList.push(shoeCheckList[firstKey]);
             score += 1;
-            isPair = false;
           }
         }
-        else{
-          isPair = false;
-        }
-  
         shoeCheckList={};
       }
     }
 
-    // console.log(shoeCount2);
-
-    
-
     return <img className={shoeName2} src={shoeObj2} />
   }
   else{
-    // if(shoeCount2 == 1 && isClicked2 == false){
-    //   shoeCheckList = {};
-    // }
-
     return <img className='' src={platyOval} />;
   }
 }
@@ -183,57 +164,45 @@ const GameBody = () => {
           <tbody>
           <tr data-row-id="1">
             <td data-column-id="1" className='padding-content' onClick={onClick1}>
-              {/* {clicked1 ? <img className={renderedShoe1[0]} src={renderedShoe1[1]} onLoad={checkIfSameShoe(renderedShoe1[1], 'shoe-1', clicked1)} /> : <img className='' src={platyOval} />} */}
               {checkIfSameShoe2(clicked1, renderedShoe1[1], 'shoe-1')}
             </td>
             <td data-column-id="2" className='padding-content' onClick={onClick2}>
-              {/* {clicked2 ? <img className={renderedShoe2[0]} src={renderedShoe2[1]} onLoad={checkIfSameShoe(renderedShoe2[1], 'shoe-2', clicked2)} /> : <img className='' src={platyOval} />} */}
               {checkIfSameShoe2(clicked2, renderedShoe2[1], 'shoe-2')}
             </td>
             <td data-column-id="3" className='padding-content' onClick={onClick3}>
-              {/* {clicked3 ? <img className={renderedShoe3[0]} src={renderedShoe3[1]} onLoad={checkIfSameShoe(renderedShoe3[1], 'shoe-3', clicked3)} /> : <img className='' src={platyOval} />} */}
               {checkIfSameShoe2(clicked3, renderedShoe3[1], 'shoe-3')}
             </td>
           </tr>
           <tr data-row-id="2">
             <td data-column-id="1" className='padding-content' onClick={onClick4}>
-              {/* {clicked4 ? <img className={renderedShoe4[0]} src={renderedShoe4[1]} onLoad={checkIfSameShoe(renderedShoe4[1], 'shoe-4', clicked4)} /> : <img className='' src={platyOval} />} */}
               {checkIfSameShoe2(clicked4, renderedShoe4[1], 'shoe-4')}
             </td>
             <td data-column-id="2" className='padding-content' onClick={onClick5}>
-              {/* {clicked5 ? <img className={renderedShoe5[0]} src={renderedShoe5[1]} onLoad={checkIfSameShoe(renderedShoe5[1], 'shoe-5', clicked5)} /> : <img className='' src={platyOval} />} */}
               {checkIfSameShoe2(clicked5, renderedShoe5[1], 'shoe-5')}
             </td>
             <td data-column-id="3" className='padding-content' onClick={onClick6}>
-              {/* {clicked6 ? <img className={renderedShoe6[0]} src={renderedShoe6[1]} onLoad={checkIfSameShoe(renderedShoe6[1], 'shoe-6', clicked6)} /> : <img className='' src={platyOval} />} */}
               {checkIfSameShoe2(clicked6, renderedShoe6[1], 'shoe-6')}
             </td>
           </tr>
           <tr data-row-id="3">
             <td data-column-id="1" className='padding-content' onClick={onClick7}>
-              {/* {clicked7 ? <img className={renderedShoe7[0]} src={renderedShoe7[1]} onLoad={checkIfSameShoe(renderedShoe7[1], 'shoe-7', clicked7)} /> : <img className='' src={platyOval} />} */}
               {checkIfSameShoe2(clicked7, renderedShoe7[1], 'shoe-7')}
             </td>
             <td data-column-id="2" className='padding-content' onClick={onClick8}>
-              {/* {clicked8 ? <img className={renderedShoe8[0]} src={renderedShoe8[1]} onLoad={checkIfSameShoe(renderedShoe8[1], 'shoe-8', clicked8)} /> : <img className='' src={platyOval} />} */}
               {checkIfSameShoe2(clicked8, renderedShoe8[1], 'shoe-8')}
             </td>
             <td data-column-id="3" className='padding-content' onClick={onClick9}>
-              {/* {clicked9 ? <img className={renderedShoe9[0]} src={renderedShoe9[1]} onLoad={checkIfSameShoe(renderedShoe9[1], 'shoe-9', clicked9)} /> : <img className='' src={platyOval} />} */}
               {checkIfSameShoe2(clicked9, renderedShoe9[1], 'shoe-9')}
             </td>
           </tr>
           <tr data-row-id="4">
             <td data-column-id="1" className='padding-content' onClick={onClick10}>
-              {/* {clicked10 ? <img className={renderedShoe10[0]} src={renderedShoe10[1]} onLoad={checkIfSameShoe(renderedShoe10[1], 'shoe-10', clicked10)} /> : <img className='' src={platyOval} />} */}
               {checkIfSameShoe2(clicked10, renderedShoe10[1], 'shoe-10')}
             </td>
             <td data-column-id="2" className='padding-content' onClick={onClick11}>
-              {/* {clicked11 ? <img className={renderedShoe11[0]} src={renderedShoe11[1]} onLoad={checkIfSameShoe(renderedShoe11[1], 'shoe-11', clicked11)} /> : <img className='' src={platyOval} />} */}
               {checkIfSameShoe2(clicked11, renderedShoe11[1], 'shoe-11')}
             </td>
             <td data-column-id="3" className='padding-content' onClick={onClick12}>
-              {/* {clicked12 ? <img className={renderedShoe12[0]} src={renderedShoe12[1]} onLoad={checkIfSameShoe(renderedShoe12[1], 'shoe-12', clicked12)} /> : <img className='' src={platyOval} />} */}
               {checkIfSameShoe2(clicked12, renderedShoe12[1], 'shoe-12')}
             </td>
           </tr>
@@ -248,8 +217,4 @@ const GameBody = () => {
   );
 };
 
-const currScore = score;
-
-const canScoreChange = isScoreChanged;
-
-export {GameBody, currScore, canScoreChange};
+export default GameBody;
