@@ -1,4 +1,5 @@
 import React from "react";
+import winScreen from "images/png/Congratulations-Page.png";
 import platyOval from 'images/png/platypus-oval-sm.png';
 import shoe1 from 'images/png/Bitmap-sm.png';
 import shoe2 from 'images/png/Bitmap-1-sm.png';
@@ -7,8 +8,13 @@ import shoe4 from 'images/png/Bitmap-3-sm.png';
 import shoe5 from 'images/png/Bitmap-4-sm.png';
 import shoe6 from 'images/png/Bitmap-5-sm.png';
 
-function formatScore(initScore, maxScore){
-  return initScore + " of " + maxScore;
+function checkScore(initScore2, maxScore2){
+  if(initScore2 == maxScore2){
+    return <img className="br4-ns br--top-ns w100" alt="" src={winScreen} />
+  }
+  else{
+    return <h1 className="br4-ns br--top-ns w100 game-header" >{initScore2 + " of "+ maxScore2}</h1>
+  }
 }
 
 function getRandomInt(min, max) {
@@ -76,92 +82,45 @@ let shoeCheckList = {};
 let shoeEventList = {};
 let shoeCheckedList = [];
 let isPair = true;
-function checkIfSameShoe(shoeObj, shoeName, isClicked){
-  // shoeCount+=1;
-  shoeCheckList[shoeName] = shoeObj;
-  shoeEventList[shoeName] = isClicked;
-  shoeCount = Object.keys(shoeCheckList).length;
-
-  
-  // console.log(Object.keys(shoeCheckList).length);
-
-  // console.log(Object.keys(shoeCheckList).length);
-  // console.log(shoeCount);
-  let shoeCount = Object.keys(shoeCheckList).length;
-  // console.log(shoeName);
-
-  if(shoeCount == 1 && isClicked == false){
-    // shoeCheckList={};
-    // shoeEventList={};
-  }
-
-  if(shoeCount == 2){
-    var firstKey = Object.keys(shoeCheckList)[0];
-    var secondKey = Object.keys(shoeCheckList)[1];
-    console.log(secondKey);
-    console.log(firstKey);
-    if(shoeCheckList[firstKey] == shoeCheckList[secondKey]){
-      if(!shoeCheckedList.includes(shoeCheckList[firstKey])){
-        shoeCheckedList.push(shoeCheckList[firstKey]);
-        score += 1;
-      }
-      isScoreChanged = true;
-      // console.log(formatScore(score, 6));
-      // console.log(isScoreChanged);
-    }
-    
-    else{
-      for(var key in shoeCountList){
-        shoeEventList[key] = false;
-      }
-    }
-
-    shoeCheckList={};
-    shoeEventList={};
-    // console.log(score);
-
-    // console.log(Object.keys(shoeCheckList).length);
-    // console.log(Object.keys(shoeEventList).length);
-  }
-}
 
 function checkIfSameShoe2(isClicked2, shoeObj2, shoeName2){
   if(isClicked2){
-    shoeCheckList[shoeName2] = shoeObj2;
     let shoeCount2 = Object.keys(shoeCheckList).length;
 
-    console.log(shoeCount2);
-    if(shoeCount2 < 2 && isPair == false){
-      shoeCheckList={};
-      isPair = true;
+    if(!shoeCheckedList.includes(shoeObj2)){
+      shoeCheckList[shoeName2] = shoeObj2;
+      if(shoeCount2 == 2){
+        var firstKey = Object.keys(shoeCheckList)[0];
+        var secondKey = Object.keys(shoeCheckList)[1];
+        console.log(secondKey);
+        console.log(firstKey);
+        console.log(shoeCheckList[firstKey] == shoeCheckList[secondKey]);
+        if(shoeCheckList[firstKey] == shoeCheckList[secondKey]){
+          if(!shoeCheckedList.includes(shoeCheckList[firstKey])){
+            shoeCheckedList.push(shoeCheckList[firstKey]);
+            score += 1;
+            isPair = false;
+          }
+        }
+        else{
+          isPair = false;
+        }
+  
+        shoeCheckList={};
+      }
     }
 
     // console.log(shoeCount2);
 
-    if(shoeCount2 == 2){
-      var firstKey = Object.keys(shoeCheckList)[0];
-      var secondKey = Object.keys(shoeCheckList)[1];
-      console.log(secondKey);
-      console.log(firstKey);
-      console.log(shoeCheckList[firstKey] == shoeCheckList[secondKey]);
-      if(shoeCheckList[firstKey] == shoeCheckList[secondKey]){
-        if(!shoeCheckedList.includes(shoeCheckList[firstKey])){
-          shoeCheckedList.push(shoeCheckList[firstKey]);
-          score += 1;
-          isPair = false;
-        }
-      }
-      else{
-        isPair = false;
-      }
-
-      shoeCheckList={};
-    }
+    
 
     return <img className={shoeName2} src={shoeObj2} />
   }
   else{
-    // shoeCheckList={};
+    // if(shoeCount2 == 1 && isClicked2 == false){
+    //   shoeCheckList = {};
+    // }
+
     return <img className='' src={platyOval} />;
   }
 }
@@ -219,7 +178,7 @@ const GameBody = () => {
 
   return (
     <div style={{backgroundColor: 'white', padding: '20px'}}>
-      <h1 className="br4-ns br--top-ns w100 game-header" >{formatScore(score, 6)}</h1>
+      {checkScore(score, 6)}
         <table style={{display: 'flex', color: 'white', justifyContent:'center', alignItems:'center'}}>
           <tbody>
           <tr data-row-id="1">
