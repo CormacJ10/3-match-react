@@ -1,4 +1,4 @@
-import React, { cloneElement, useMemo, useRef } from 'react';
+import React, { cloneElement, useMemo, useRef, useState } from 'react';
 import { Card } from 'react-bootstrap';
 
 import { noop } from 'util';
@@ -8,6 +8,8 @@ import HeaderImage from '../header_image';
 
 const NullNav = () => null;
 
+const randomInteger = (max) => Math.floor(Math.random() * Math.floor(max));
+
 export const Wrapper = ({
   children,
   mutationQuery = '',
@@ -16,22 +18,49 @@ export const Wrapper = ({
 }) => {
   const Navigation = navigation;
 
-  const entry = false;
-  const mutationLoading = false;
+  const [entry, setEntry] = useState(false);
+  const [entryValue, setEntryValue] = useState();
+  const [mutationLoading, setMutationLoading] = useState(false);
   const wrapperElement = useRef();
 
   const additionalProps = {
+    entered: !!entry,
+    entryValue,
+    submit: (value) => {
+      setMutationLoading(true);
+
+      setTimeout(() => {
+        setEntry(true);
+        setEntryValue(value);
+        setMutationLoading(false);
+      }, 2000);
+    },
+    submitting: mutationLoading,
     wrapperElement,
   };
 
   const element = useMemo(() => cloneElement(children, additionalProps), [
     children,
+    entry,
+    entryValue,
+    setEntryValue,
+    setEntry,
+    mutationLoading,
+    setMutationLoading,
     additionalProps,
   ]);
 
   return (
     <div className="h-100 flex flex-column w100 center overflow-y-hidden interactive__wrapper">
-      <HeaderImage />
+      <HeaderImage
+        entry={entry}
+        toggleEntry={() => {
+          setEntry((value) => !value);
+          setEntryValue((value) => (!!value ? null : randomInteger(6)));
+        }}
+        mutationLoading={mutationLoading}
+        toggleMutationLoading={() => setMutationLoading((value) => !value)}
+      />
 
       <CardWrapper>
         <Card.Body>

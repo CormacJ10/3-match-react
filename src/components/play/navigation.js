@@ -13,7 +13,7 @@ export const Navigation = ({
 
   return (
     <>
-      {/* <span className="nav-span nav-span--split hidden show-sm">
+      <span className="nav-span nav-span--split hidden show-sm">
         <ButtonLink
           href={previous}
           disabled={previousDisabled}
@@ -60,7 +60,7 @@ export const Navigation = ({
             'Next'
           )}
         </ButtonLink>
-      </span> */}
+      </span>
     </>
   );
 };

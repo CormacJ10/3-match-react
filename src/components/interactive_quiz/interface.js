@@ -15,23 +15,24 @@ import CardLoading from '../card_loading';
  * }
  */
 
-export const Interface = ({ component, wrapperElement }) => {
+export const Interface = ({
+  component,
+  entered,
+  entryValue,
+  submit,
+  submitting,
+  wrapperElement,
+}) => {
   // Demo Interface
-  const [entered] = useState(false);
-  const [entryValue] = useState(0);
-  const [submitting] = useState(false);
-
   const interactiveInterface = useMemo(
     () => ({
       entered,
       entryValue,
-      submit: (value) => {
-        console.log('submitting', value);
-      },
+      submit,
       submitting,
       wrapperElement,
     }),
-    [entered, entryValue, submitting, wrapperElement]
+    [entered, entryValue, submit, submitting, wrapperElement]
   );
 
   const Component = component;

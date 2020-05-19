@@ -1,25 +1,6 @@
 import React from 'react';
-import App from './platypus/game';
+import GameBody from './platypus/game-body';
 
-const Game = ({
-  entered,
-  entryValue,
-  submit,
-  submitting,
-  submitError,
-  wrapperElement,
-}) => {
-  console.log(
-    'Game props',
-    entered,
-    entryValue,
-    submit,
-    submitting,
-    submitError,
-    wrapperElement
-  );
-
-  return <App />;
-};
+const Game = (props) => <GameBody {...props} />;
 
 export default Game;
