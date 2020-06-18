@@ -1,12 +1,12 @@
 import React from "react";
 import winScreen from "images/png/Congratulations-Page.png";
-import platyOval from 'images/png/platypus-oval-sm.png';
-import shoe1 from 'images/png/Bitmap-sm.png';
-import shoe2 from 'images/png/Bitmap-1-sm.png';
-import shoe3 from 'images/png/Bitmap-2-sm.png';
-import shoe4 from 'images/png/Bitmap-3-sm.png';
-import shoe5 from 'images/png/Bitmap-4-sm.png';
-import shoe6 from 'images/png/Bitmap-5-sm.png';
+import platyOval from 'images/png/platypus-oval.png';
+import shoe1 from 'images/png/Bitmap.png';
+import shoe2 from 'images/png/Bitmap-1.png';
+import shoe3 from 'images/png/Bitmap-2.png';
+import shoe4 from 'images/png/Bitmap-3.png';
+import shoe5 from 'images/png/Bitmap-4.png';
+import shoe6 from 'images/png/Bitmap-5.png';
 
 function checkScore(initScore2, maxScore2){
   if(initScore2 == maxScore2){
@@ -158,61 +158,43 @@ const GameBody = () => {
 
 
   return (
-    <div style={{backgroundColor: 'white', padding: '20px'}}>
-      {checkScore(score, 6)}
-        <table style={{display: 'flex', color: 'white', justifyContent:'center', alignItems:'center'}}>
-          <tbody>
-          <tr data-row-id="1">
-            <td data-column-id="1" className='padding-content' onClick={onClick1}>
-              {checkIfSameShoe2(clicked1, renderedShoe1[1], 'shoe-1')}
-            </td>
-            <td data-column-id="2" className='padding-content' onClick={onClick2}>
-              {checkIfSameShoe2(clicked2, renderedShoe2[1], 'shoe-2')}
-            </td>
-            <td data-column-id="3" className='padding-content' onClick={onClick3}>
-              {checkIfSameShoe2(clicked3, renderedShoe3[1], 'shoe-3')}
-            </td>
-          </tr>
-          <tr data-row-id="2">
-            <td data-column-id="1" className='padding-content' onClick={onClick4}>
-              {checkIfSameShoe2(clicked4, renderedShoe4[1], 'shoe-4')}
-            </td>
-            <td data-column-id="2" className='padding-content' onClick={onClick5}>
-              {checkIfSameShoe2(clicked5, renderedShoe5[1], 'shoe-5')}
-            </td>
-            <td data-column-id="3" className='padding-content' onClick={onClick6}>
-              {checkIfSameShoe2(clicked6, renderedShoe6[1], 'shoe-6')}
-            </td>
-          </tr>
-          <tr data-row-id="3">
-            <td data-column-id="1" className='padding-content' onClick={onClick7}>
-              {checkIfSameShoe2(clicked7, renderedShoe7[1], 'shoe-7')}
-            </td>
-            <td data-column-id="2" className='padding-content' onClick={onClick8}>
-              {checkIfSameShoe2(clicked8, renderedShoe8[1], 'shoe-8')}
-            </td>
-            <td data-column-id="3" className='padding-content' onClick={onClick9}>
-              {checkIfSameShoe2(clicked9, renderedShoe9[1], 'shoe-9')}
-            </td>
-          </tr>
-          <tr data-row-id="4">
-            <td data-column-id="1" className='padding-content' onClick={onClick10}>
-              {checkIfSameShoe2(clicked10, renderedShoe10[1], 'shoe-10')}
-            </td>
-            <td data-column-id="2" className='padding-content' onClick={onClick11}>
-              {checkIfSameShoe2(clicked11, renderedShoe11[1], 'shoe-11')}
-            </td>
-            <td data-column-id="3" className='padding-content' onClick={onClick12}>
-              {checkIfSameShoe2(clicked12, renderedShoe12[1], 'shoe-12')}
-            </td>
-          </tr>
-          </tbody>
-        </table>
-        <div style={{marginTop: '12px', display: 'flex', color: 'black', justifyContent:'center', alignItems:'center' }}>
-          <div className="" style={{ backgroundColor: 'white', width: '80%', border: 'solid black 1px', borderRadius: '7px'}}>
-            <p className="game-footer">Tap Circles to Match Patterns</p>
-          </div>
-        </div>
+    <div className="grid-container">
+      <div onClick={onClick1}>
+        {checkIfSameShoe2(clicked1, renderedShoe1[1], 'shoe-1')}
+      </div>
+      <div onClick={onClick2}>
+        {checkIfSameShoe2(clicked2, renderedShoe2[1], 'shoe-2')}
+      </div>
+      <div onClick={onClick3}>
+        {checkIfSameShoe2(clicked3, renderedShoe3[1], 'shoe-3')}
+      </div>
+      <div onClick={onClick4}>
+        {checkIfSameShoe2(clicked4, renderedShoe4[1], 'shoe-4')}
+      </div>
+      <div onClick={onClick5}>
+        {checkIfSameShoe2(clicked5, renderedShoe5[1], 'shoe-5')}
+      </div>
+      <div onClick={onClick6}>
+        {checkIfSameShoe2(clicked6, renderedShoe6[1], 'shoe-6')}
+      </div>
+      <div onClick={onClick7}>
+        {checkIfSameShoe2(clicked7, renderedShoe7[1], 'shoe-7')}
+      </div>
+      <div onClick={onClick8}>
+        {checkIfSameShoe2(clicked8, renderedShoe8[1], 'shoe-8')}
+      </div>
+      <div onClick={onClick9}>
+        {checkIfSameShoe2(clicked9, renderedShoe9[1], 'shoe-9')}
+      </div>
+      <div onClick={onClick10}>
+        {checkIfSameShoe2(clicked10, renderedShoe10[1], 'shoe-10')}
+      </div>
+      <div onClick={onClick11}>
+        {checkIfSameShoe2(clicked11, renderedShoe11[1], 'shoe-11')}
+      </div>
+      <div onClick={onClick12}>
+        {checkIfSameShoe2(clicked12, renderedShoe12[1], 'shoe-12')}
+      </div>
     </div>
   );
 };
