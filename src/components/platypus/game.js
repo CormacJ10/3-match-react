@@ -1,5 +1,5 @@
 import React from "react";
-import {GameBody} from './game-body';
+import GameBody from './game-body';
 
  
 const App = () => {

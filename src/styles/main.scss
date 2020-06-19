@@ -5,6 +5,8 @@ $background-image-url: null;
 // Framework styles
 @import 'bootstrap/scss/bootstrap';
 
+@import './platypus/game';
+
 @import './quiz/utilities/utilities';
 @import './quiz/variables';
 

@@ -13,7 +13,7 @@ export const Navigation = ({
 
   return (
     <>
-      {/* <span className="nav-span nav-span--split hidden show-sm">
+      <span className="nav-span nav-span--split hidden show-sm">
         <ButtonLink
           href={previous}
           disabled={previousDisabled}
@@ -35,7 +35,13 @@ export const Navigation = ({
         </ButtonLink>
       </span>
 
-      <span className="">
+      <div className="flex flex-column w100 " style={{color: 'black', justifyContent:'center', alignItems:'center' }}>
+          <div className="" style={{paddingLeft: '5px', paddingRight: '5px', border: 'solid black 1px', borderRadius: '7px'}}>
+            <p className="game-footer">Tap to Match The Shoes!</p>
+          </div>
+      </div>
+
+      <span className="ml4">
         <ButtonLink
           href={next}
           disabled={nextDisabled}
@@ -60,7 +66,7 @@ export const Navigation = ({
             'Next'
           )}
         </ButtonLink>
-      </span> */}
+      </span>
     </>
   );
 };
