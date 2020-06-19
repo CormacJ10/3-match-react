@@ -81,6 +81,7 @@ let shoeCheckList = {};
 let shoeCheckedList = [];
 
 function checkIfSameShoe2(isClicked2, shoeObj2, shoeName2){
+  console.log("test");
   if(isClicked2){
     let shoeCount2 = Object.keys(shoeCheckList).length;
 
