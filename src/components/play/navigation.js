@@ -13,7 +13,12 @@ export const Navigation = ({
 
   return (
     <>
-      <span className="nav-span nav-span--split hidden show-sm">
+      <div className="flex flex-column w100 nav-span" style={{color: 'black', justifyContent:'center', alignItems:'center' }}>
+          <div className="game-footer-container w100 " style={{}}>
+            <p className="game-footer w100">Tap The Logo to Match Shoes!</p>
+          </div>
+      </div>
+      {/* <span className="nav-span nav-span--split hidden show-sm">
         <ButtonLink
           href={previous}
           disabled={previousDisabled}
@@ -41,7 +46,7 @@ export const Navigation = ({
           </div>
       </div>
 
-      <span className="ml4">
+      <span className="nav-span nav-span--split hidden show-sm">
         <ButtonLink
           href={next}
           disabled={nextDisabled}
@@ -67,6 +72,33 @@ export const Navigation = ({
           )}
         </ButtonLink>
       </span>
+
+      <span className="hidden-sm ml4">
+        <ButtonLink
+          href={next}
+          disabled={nextDisabled}
+          variant="dark"
+          className={`nav-btn br4 ${
+            nextLoading ? 'nav-btn-entering' : 'nav-btn-next'
+          }`}
+        >
+          {nextLoading ? (
+            <>
+              <span className="btn__text">Entering</span>
+
+              <Spinner
+                animation="border"
+                as="span"
+                className="btn__icon"
+                size="sm"
+                role="status"
+              />
+            </>
+          ) : (
+            'Next'
+          )}
+        </ButtonLink>
+      </span> */}
     </>
   );
 };
