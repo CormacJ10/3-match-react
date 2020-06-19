@@ -1,17 +1,17 @@
 import header from 'images/header.png';
 import React from 'react';
+import winScreen from "images/png/Congratulations-Page.png";
+import platyBanner from "images/platy-logo.png";
 // import {currScore, canScoreChange} from './platypus/game-body';
 
-function formatScore(initScore, maxScore){
-  // console.log(currScore);
-  return initScore + " of " + maxScore;
+function checkScore(initScore2, maxScore2){
+  if(initScore2 == maxScore2){
+    return <img className="br4-ns br--top-ns w100" alt="" src={winScreen} />
+  }
+  else{
+    return <h1 className="br4-ns br--top-ns w100 game-header" >{initScore2 + " of "+ maxScore2}</h1>
+  }
 }
-
-// const HeaderImage = () => (
-//   <header className="">
-//     <img className="br4-ns br--top-ns w100" alt="" src={header} />
-//   </header>
-// );
 
 const HeaderImage = ({
   entry,
@@ -20,10 +20,8 @@ const HeaderImage = ({
   toggleMutationLoading,
 }) => (
   <header>
-    {/* <img className="br4-ns br--top-ns w100" alt="" src={header} /> */}
-    <div className="game-header">
-      <h2>Test Controls</h2>
-      <div>
+    <img className="br4-ns br--top-ns w100" alt="" src={platyBanner} />
+      {/* <div>
         <h3>
           Entry: {`${entry}`}{' '}
           <span>
@@ -43,8 +41,7 @@ const HeaderImage = ({
             </button>
           </span>
         </h3>
-      </div>
-    </div>
+      </div> */}
   </header>
 );
 

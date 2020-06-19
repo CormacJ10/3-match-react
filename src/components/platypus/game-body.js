@@ -13,7 +13,7 @@ function checkScore(initScore2, maxScore2){
     return <img className="br4-ns br--top-ns w100" alt="" src={winScreen} />
   }
   else{
-    return <h1 className="br4-ns br--top-ns w100 game-header" >{initScore2 + " of "+ maxScore2}</h1>
+    return <p className="br3 w100 game-header" >{initScore2 + " of "+ maxScore2}</p>
   }
 }
 
@@ -106,7 +106,14 @@ function checkIfSameShoe2(isClicked2, shoeObj2, shoeName2){
   }
 }
  
-const GameBody = () => {
+const GameBody = ({
+  entered,
+  entryValue,
+  submit,
+  submitting,
+  submitError,
+  wrapperElement,
+}) => {
   const [clicked1, setClick1] = React.useState(false);
   const onClick1 = event => {
     !clicked1 ? setClick1(true) : setClick1(false);
@@ -158,6 +165,8 @@ const GameBody = () => {
 
 
   return (
+    <>
+    {checkScore(0, 6)}
     <div className="grid-container">
       <div onClick={onClick1}>
         {checkIfSameShoe2(clicked1, renderedShoe1[1], 'shoe-1')}
@@ -196,6 +205,7 @@ const GameBody = () => {
         {checkIfSameShoe2(clicked12, renderedShoe12[1], 'shoe-12')}
       </div>
     </div>
+    </>
   );
 };
 

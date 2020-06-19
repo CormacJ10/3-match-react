@@ -43,7 +43,7 @@ export const Wrapper = ({
           </section>
         </Card.Body>
 
-        <nav className="flex justify-center pt3 pb3 hidden-sm">
+        <nav className="flex justify-center pt3  hidden-sm">
           <Navigation nextDisabled={!entry} nextLoading={mutationLoading} />
         </nav>
       </CardWrapper>
