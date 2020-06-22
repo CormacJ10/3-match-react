@@ -22,7 +22,20 @@ const HeaderImage = ({
 }) => (
   <header>
     <img className="br4-ns br--top-ns w100 platypus-header" alt="" src={blancHeader} />
-      {/* <div>
+    <div
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        height: '100%',
+        width: '100%',
+        zIndex: 100,
+        backgroundColor: 'rgba(255,255,255,0.9)',
+      }}
+    >
+      <h2>Test Controls</h2>
+
+      <div>
         <h3>
           Entry: {`${entry}`}{' '}
           <span>
@@ -42,7 +55,8 @@ const HeaderImage = ({
             </button>
           </span>
         </h3>
-      </div> */}
+      </div>
+    </div>
   </header>
 );
 

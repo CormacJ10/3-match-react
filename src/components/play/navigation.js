@@ -18,7 +18,7 @@ export const Navigation = ({
             <p className="game-footer w100">Tap The Logo to Match Shoes!</p>
           </div>
       </div>
-      {/* <span className="nav-span nav-span--split hidden show-sm">
+      <span className="nav-span nav-span--split hidden show-sm">
         <ButtonLink
           href={previous}
           disabled={previousDisabled}
