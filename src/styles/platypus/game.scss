@@ -18,8 +18,11 @@
 }
 
 .game-header{
-    // z-index: 9999;
     margin-bottom: 0 !important;
+    background-color: #77CBAF;
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
 }
 
 .game-footer{
@@ -32,13 +35,6 @@
         padding-bottom: 20px;
         padding-right: 40px;
         padding-left: 40px;
-    }
-
-    .game-header{
-        background-color: #77CBAF;
-        font-size: 40px;
-        font-weight: 700;
-        color: white;
     }
 
     .game-footer{
@@ -56,16 +52,9 @@
         padding-right: 34px;
     }
 
-    .game-header{
-        background-color: #77CBAF;
-        font-size: 40px;
-        color: white;
-    }
-
     .game-footer{
         margin-bottom: 0px;
-        padding: 5px;
-        font-style: bold;
+        font-weight: 700;
         font-size: 20px;
     }
 }
@@ -78,65 +67,40 @@
         padding-right: 12px;
     }
 
-    .game-header{
-        background-color: #77CBAF;
-        font-size: 40px;
-        color: white;
-    }
-
     .game-footer{
         margin-bottom: 0px;
-        padding: 5px;
-        font-style: bold;
+        font-weight: 700;
         font-size: 20px;
     }
 }
 
 @media only screen and (min-width: 426px) and (max-width: 479px){
-    // .game-footer-container{
-    //     padding-left: 66px;
-    //     padding-right: 66px;
-    // }
     .padding-content{
         padding-top: 15px;
         padding-bottom: 15px;
     }
 
-    .game-header{
-        background-color: #77CBAF;
-        font-size: 40px;
-        color: white;
-    }
-
     .game-footer{
         margin-bottom: 0px;
-        padding: 5px;
-        font-style: bold;
+        font-weight: 700;
         font-size: 20px;
     }
 }
 
 @media only screen and (max-width: 425px){
-    // .game-footer-container{
-    //     padding-left: 58px;
-    //     padding-right: 57px;
-    // }
     .padding-content{
         padding-top: 25px;
         padding-bottom: 25px;
     }
 
     .game-header{
-        background-color: #77CBAF;
-        font-size: 40px;
-        color: white;
+        font-size: 35px;
     }
 
     .game-footer{
         margin-bottom: 0px;
-        padding: 5px;
-        font-style: bold;
-        font-size: 20px;
+        font-weight: 700;
+        font-size: 16px;
     }
 }
 
@@ -146,16 +110,9 @@
         padding-bottom: 25px;
     }
 
-    .game-header{
-        background-color: #77CBAF;
-        font-size: 40px;
-        color: white;
-    }
-
     .game-footer{
         margin-bottom: 0px;
-        padding: 5px;
-        font-style: bold;
-        font-size: 20px;
+        font-weight: 700;
+        font-size: 16px;
     }
 }

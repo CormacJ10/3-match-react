@@ -23,6 +23,7 @@ const HeaderImage = ({
 }) => (
   <header>
     <img className="br4-ns br--top-ns w100" alt="" src={blancHeader} />
+    {/* <h1 className="br4-ns br--top-ns w100 game-header" >0 of 6</h1> */}
     {/* <div
       style={{
         position: 'absolute',
