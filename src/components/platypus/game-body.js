@@ -8,12 +8,13 @@ import shoe4 from 'images/Bitmap-3-md.png';
 import shoe5 from 'images/Bitmap-4-md.png';
 import shoe6 from 'images/Bitmap-5-md.png';
 
+function displayScore(initScore, maxScore){
+  return <p className="br3 w100 game-header" >{initScore + " of "+ maxScore}</p>
+}
+
 function checkScore(initScore2, maxScore2){
   if(initScore2 == maxScore2){
     return <img className="br3 w100 win-screen" alt="" src={winScreen} />
-  }
-  else{
-    return <p className="br3 w100 game-header" >{initScore2 + " of "+ maxScore2}</p>
   }
 }
 
@@ -163,8 +164,9 @@ const GameBody = () => {
 
   return (
     <>
-    <div className="pt2 pb3 pl2 pr2 game-header-container">
+    <div className="pt2 pb2 pl2 pr2 game-header-container">
       {checkScore(score, 6)}
+      {displayScore(score, 6)}
     </div>
         <div className="pt2 pb2 pl3 pr3 grid-container">
             <div data-column-id="1" onClick={onClick1}>
