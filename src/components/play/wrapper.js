@@ -10,6 +10,8 @@ const NullNav = () => null;
 
 const randomInteger = (max) => Math.floor(Math.random() * Math.floor(max));
 
+// const [score, setScore] = useState((min, max) => (min != max ? winScreen : min + " of " + max ));
+
 export const Wrapper = ({
   children,
   mutationQuery = '',
@@ -58,6 +60,7 @@ export const Wrapper = ({
           setEntry((value) => !value);
           setEntryValue((value) => (!!value ? null : randomInteger(6)));
         }}
+        entryValue={entryValue}
         mutationLoading={mutationLoading}
         toggleMutationLoading={() => setMutationLoading((value) => !value)}
       />
@@ -72,7 +75,7 @@ export const Wrapper = ({
           </section>
         </Card.Body>
 
-        <nav className="flex justify-center pt3  hidden-sm">
+        <nav className="flex justify-center hidden-sm">
           <Navigation nextDisabled={!entry} nextLoading={mutationLoading} />
         </nav>
       </CardWrapper>

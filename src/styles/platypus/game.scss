@@ -18,15 +18,12 @@
 }
 
 .game-header{
-    z-index: 9999;
+    // z-index: 9999;
     margin-bottom: 0 !important;
 }
 
-.game-footer-container{
-    // padding-left: 5px;
-    // padding-right: 5px;
+.game-footer{
     border: solid black 1px;
-    border-radius: 7px;
 }
 
 @media only screen and (min-width: 768px){
@@ -39,16 +36,15 @@
 
     .game-header{
         background-color: #77CBAF;
-        font-size: 50px;
+        font-size: 40px;
         font-weight: 700;
         color: white;
     }
 
     .game-footer{
         margin-bottom: 0px;
-        padding: 5px;
-        font-style: bold;
-        font-size: 30px;
+        font-weight: 700;
+        font-size: 20px;
     }
 }
 
@@ -62,7 +58,7 @@
 
     .game-header{
         background-color: #77CBAF;
-        font-size: 50px;
+        font-size: 40px;
         color: white;
     }
 
@@ -70,7 +66,7 @@
         margin-bottom: 0px;
         padding: 5px;
         font-style: bold;
-        font-size: 30px;
+        font-size: 20px;
     }
 }
 
@@ -84,7 +80,7 @@
 
     .game-header{
         background-color: #77CBAF;
-        font-size: 50px;
+        font-size: 40px;
         color: white;
     }
 
@@ -92,7 +88,7 @@
         margin-bottom: 0px;
         padding: 5px;
         font-style: bold;
-        font-size: 25px;
+        font-size: 20px;
     }
 }
 
@@ -108,7 +104,7 @@
 
     .game-header{
         background-color: #77CBAF;
-        font-size: 50px;
+        font-size: 40px;
         color: white;
     }
 
@@ -116,7 +112,7 @@
         margin-bottom: 0px;
         padding: 5px;
         font-style: bold;
-        font-size: 25px;
+        font-size: 20px;
     }
 }
 
@@ -132,7 +128,7 @@
 
     .game-header{
         background-color: #77CBAF;
-        font-size: 50px;
+        font-size: 40px;
         color: white;
     }
 
@@ -140,7 +136,7 @@
         margin-bottom: 0px;
         padding: 5px;
         font-style: bold;
-        font-size: 25px;
+        font-size: 20px;
     }
 }
 
@@ -152,7 +148,7 @@
 
     .game-header{
         background-color: #77CBAF;
-        font-size: 50px;
+        font-size: 40px;
         color: white;
     }
 
@@ -160,6 +156,6 @@
         margin-bottom: 0px;
         padding: 5px;
         font-style: bold;
-        font-size: 25px;
+        font-size: 20px;
     }
 }

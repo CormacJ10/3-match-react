@@ -1,8 +1,8 @@
 import header from 'images/header.png';
 import React from 'react';
-import winScreen from "images/png/Congratulations-Page.png";
+import winScreen from "images/Congratulations-Page.png";
 import platyBanner from "images/platy-logo.png";
-import blancHeader from "images/blanc-header-sm.png";
+import blancHeader from "images/blanc-header-true.png";
 // import {currScore, canScoreChange} from './platypus/game-body';
 
 function checkScore(initScore2, maxScore2){
@@ -16,13 +16,14 @@ function checkScore(initScore2, maxScore2){
 
 const HeaderImage = ({
   entry,
+  entryValue,
   toggleEntry,
   mutationLoading,
   toggleMutationLoading,
 }) => (
   <header>
-    <img className="br4-ns br--top-ns w100 platypus-header" alt="" src={blancHeader} />
-    <div
+    <img className="br4-ns br--top-ns w100" alt="" src={blancHeader} />
+    {/* <div
       style={{
         position: 'absolute',
         top: 0,
@@ -37,7 +38,7 @@ const HeaderImage = ({
 
       <div>
         <h3>
-          Entry: {`${entry}`}{' '}
+          Entry: {`${entryValue}`}{' '}
           <span>
             <button className="btn btn-primary" onClick={toggleEntry}>
               Toggle
@@ -56,7 +57,7 @@ const HeaderImage = ({
           </span>
         </h3>
       </div>
-    </div>
+    </div> */}
   </header>
 );
 
