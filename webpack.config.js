@@ -63,6 +63,9 @@ let config = {
       'typeof window': JSON.stringify('object'),
     }),
     new MiniCssExtractPlugin(),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+    }),
   ],
 };
 
@@ -90,12 +93,7 @@ if (dev) {
       watchContentBase: true,
     },
 
-    plugins: [
-      new HotModuleReplacementPlugin(),
-      new HtmlWebpackPlugin({
-        template: 'src/index.html',
-      }),
-    ],
+    plugins: [new HotModuleReplacementPlugin()],
   });
 } else {
   config = merge(config, {
