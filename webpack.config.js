@@ -102,10 +102,6 @@ if (dev) {
     entry: {
       main: './src/app.js',
     },
-
-    output: {
-      publicPath: '/assets/',
-    },
   });
 }
 
