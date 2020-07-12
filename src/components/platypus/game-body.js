@@ -8,8 +8,23 @@ import shoe4 from 'images/Bitmap-3-md.png';
 import shoe5 from 'images/Bitmap-4-md.png';
 import shoe6 from 'images/Bitmap-5-md.png';
 
-function displayScore(initScore, maxScore){
-  return <p className="br3 w100 game-header" >{initScore + " of "+ maxScore}</p>
+// function displayScore(initScore, maxScore){
+//   return <p className="br3 w100 game-header" >{initScore + " of "+ maxScore}</p>
+// }
+
+function displayScore(initScore, maxScore, isMatched){
+  if(!isMatched){
+    return <p className="br3 w100 game-header" >{initScore + " of "+ maxScore}</p>;
+  }
+  if(isMatched){
+    
+    setTimeout(function() {
+        // Whatever you want to do after the wait
+        isMatch = false;
+    }, 500);
+
+    return <p className="br3 w100 game-header" >{"Match!"}</p>;
+  }
 }
 
 function checkScore(initScore2, maxScore2){
@@ -78,6 +93,7 @@ const renderedShoe11=renderShoe();
 const renderedShoe12=renderShoe();
 
 var score = 0;
+var isMatch = false;
 let shoeCheckList = {};
 let shoeCheckedList = [];
 
@@ -98,6 +114,7 @@ function checkIfSameShoe2(isClicked2, shoeObj2, shoeName2){
           if(!shoeCheckedList.includes(shoeCheckList[firstKey])){
             shoeCheckedList.push(shoeCheckList[firstKey]);
             score += 1;
+            isMatch = true;
           }
         }
         shoeCheckList={};
@@ -166,7 +183,7 @@ const GameBody = () => {
     <>
     <div className="pt2 pb2 pl2 pr2 game-header-container">
       {checkScore(score, 6)}
-      {displayScore(score, 6)}
+      {displayScore(score, 6, isMatch)}
     </div>
         <div className="pt2 pb2 pl3 pr3 grid-container">
             <div data-column-id="1" onClick={onClick1}>
